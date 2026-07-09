@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+<head>
+<title>Feed Subscriptions</title>
+</head>
+<body>
+  <outline title="Books" text="Books">
+      <outline text="samuelthomasdavies.com" title="samuelthomasdavies.com" type="rss" 
+            xmlUrl="https://www.samuelthomasdavies.com/feed/" htmlUrl="https://www.samuelthomasdavies.com/"/>
+      <outline text="The Rabbit Hole" title="Blas" type="rss" 
+            xmlUrl="http://blas.com/feed/" htmlUrl="https://blas.com/"/>
+      <outline text="Kula Blog" title="Kula Blog" type="rss" 
+            xmlUrl="https://kula.blog/feed/feed.xml"/>
+      <outline text="Four Minute Books" title="Four Minute Books" type="rss" 
+            xmlUrl="http://fourminutebooks.com/feed/" htmlUrl="https://fourminutebooks.com/"/>
+      <outline text="Bazaar of War" title="Bazaar of War" type="rss" 
+            xmlUrl="http://bazaarofwar.com/feed/" htmlUrl="https://bazaarofwar.com"/>
+      <outline text="LSE Review of Books" title="LSE Review of Books" type="rss" 
+            xmlUrl="http://blogs.lse.ac.uk/lsereviewofbooks/feed/" htmlUrl="https://blogs.lse.ac.uk/lsereviewofbooks"/>
+      <outline text="Ali Abdaal" title="Ali Abdaal" type="rss" 
+            xmlUrl="https://aliabdaal.com/rss/" htmlUrl="https://aliabdaal.com/"/>
+  </outline>
+  <outline title="Current affairs" text="Current affairs">
+      <outline text="FT Opinion" title="FT Opinion" type="rss" 
+            xmlUrl="https://www.ft.com/opinion?format=rss" htmlUrl="https://www.ft.com/stream/6da31a37-691f-4908-896f-2829ebe2309e"/>
+      <outline text="UnHerd" title="UnHerd" type="rss" 
+            xmlUrl="https://unherd.com/feed/" htmlUrl="https://unherd.com"/>
+      <outline text="ZeroHedge" title="ZeroHedge" type="rss" 
+            xmlUrl="http://feeds.feedburner.com/zerohedge/feed" htmlUrl="https://www.zerohedge.com"/>
+      <outline text="The Unz Review" title="The Unz Review" type="rss" 
+            xmlUrl="http://www.unz.com/xfeed/rss/all/" htmlUrl="https://www.unz.com"/>
+      <outline text="WAR TARD" title="WAR TARD" type="rss" 
+            xmlUrl="http://wartard.blogspot.com/feeds/posts/default" htmlUrl="https://wartard.blogspot.com/"/>
+      <outline text="The Article" title="The Article" type="rss" 
+            xmlUrl="https://www.thearticle.com/feed"/>
+      <outline text="Open democracy" title="Open democracy" type="rss" 
+            xmlUrl="http://www.opendemocracy.net/xml/rss/home/index.xml" htmlUrl="https://www.opendemocracy.net/feed/"/>
+      <outline text="National Review" title="National Review" type="rss" 
+            xmlUrl="http://www.nationalreview.com/rss.xml" htmlUrl="https://www.nationalreview.com"/>
+      <outline text="New Yorker" title="New Yorker" type="rss" 
+            xmlUrl="http://www.newyorker.com/feed/news" htmlUrl="https://www.newyorker.com"/>
+      <outline text="CapX - Politics, Economics, Technology, Ideas" title="CapX" type="rss" 
+            xmlUrl="https://morss.it/:items=||*[class=post-content]/https://capx.co/" htmlUrl="https://capx.co/"/>
+      <outline text="Responsible Statecraft" title="Responsible Statecraft" type="rss" 
+            xmlUrl="https://responsiblestatecraft.org/feed/" htmlUrl="https://responsiblestatecraft.org/"/>
+      <outline text="The Pick: Novara Media" title="The Pick: Novara Media" type="rss" 
+            xmlUrl="https://kill-the-newsletter.com/feeds/3u3hv2n2f8flggdf.xml"/>
+      <outline text="britanniq" title="britanniq" type="rss" 
+            xmlUrl="https://kill-the-newsletter.com/feeds/c49xcsamyrpfk6mi.xml"/>
+      <outline text="New Civil Engineer" title="New Civil Engineer" type="rss" 
+            xmlUrl="https://www.newcivilengineer.com/feed/" htmlUrl="https://www.newcivilengineer.com/"/>
+      <outline text="Democracy Journal" title="Democracy Journal" type="rss" 
+            xmlUrl="https://democracyjournal.org/feed/" htmlUrl="https://democracyjournal.org"/>
+  </outline>
+  <outline title="Longform" text="Longform">
+      <outline text="Blog - Traditions of Conflict" title="Blog - Traditions of Conflict" type="rss" 
+            xmlUrl="https://traditionsofconflict.com/blog?format=rss" htmlUrl="https://traditionsofconflict.com/blog/"/>
+      <outline text="The New York Review of Books" title="The New York Review of Books" type="rss" 
+            xmlUrl="http://feeds.feedburner.com/nybooks" htmlUrl="https://www.nybooks.com"/>
+      <outline text="City Journal" title="City Journal" type="rss" 
+            xmlUrl="http://feeds.feedburner.com/city-journal"/>
+      <outline text="Crooked Timber" title="Crooked Timber" type="rss" 
+            xmlUrl="http://crookedtimber.org/feed/" htmlUrl="https://crookedtimber.org"/>
+      <outline text="Wisdom of Crowds" title="Wisdom of Crowds" type="rss" 
+            xmlUrl="https://wisdomofcrowds.live/rss/"/>
+      <outline text="Quillette" title="Quillette" type="rss" 
+            xmlUrl="https://cdn.mysitemapgenerator.com/shareapi/rss/02081293017" htmlUrl="https://quillette.com/"/>
+      <outline text="Palladium" title="Palladium" type="rss" 
+            xmlUrl="https://palladiummag.com/feed/" htmlUrl="https://www.palladiummag.com/"/>
+      <outline text="Brave New Europe" title="Brave New Europe" type="rss" 
+            xmlUrl="https://braveneweurope.com/feed" htmlUrl="https://braveneweurope.com/"/>
+      <outline text="Works in Progress" title="Works in Progress" type="rss" 
+            xmlUrl="https://worksinprogress.co/feed/"/>
+      <outline text="Features – FiveThirtyEight" title="Features – FiveThirtyEight" type="rss" 
+            xmlUrl="https://fivethirtyeight.com/features/feed/" htmlUrl="https://fivethirtyeight.com"/>
+      <outline text="The Critic Magazine" title="The Critic Magazine" type="rss" 
+            xmlUrl="https://thecritic.co.uk/feed/" htmlUrl="https://thecritic.co.uk"/>
+      <outline text="LRB blog" title="LRB blog" type="rss" 
+            xmlUrl="http://www.lrb.co.uk/blog/feed/" htmlUrl="https://www.lrb.co.uk/blog" entryContent="3"/>
+      <outline text="London Review of Books" title="LRB" type="rss" 
+            xmlUrl="http://www.lrb.co.uk/homerss.xml"/>
+      <outline text="hedgehog review" title="hedgehog review" type="rss" 
+            xmlUrl="https://kill-the-newsletter.com/feeds/ck692thovbnfhi25.xml"/>
+      <outline text="The New Atlantis" title="The New Atlantis" type="rss" 
+            xmlUrl="https://kill-the-newsletter.com/feeds/m4bzx0257y2uhei4.xml"/>
+      <outline text="Engelsberg Ideas" title="Engelsberg Ideas" type="rss" 
+            xmlUrl="https://engelsbergideas.com/feed/" htmlUrl="https://engelsbergideas.com/"/>
+      <outline text="MercatorNet" title="MercatorNet" type="rss" 
+            xmlUrl="http://www.mercatornet.com/rss/"/>
+      <outline text="Edge.org" title="Edge.org" type="rss" 
+            xmlUrl="http://www.edge.org/feed" htmlUrl="https://www.edge.org/"/>
+      <outline text="The Pudding" title="The Pudding" type="rss" 
+            xmlUrl="https://pudding.cool/feed/index.xml" htmlUrl="https://pudding.cool"/>
+      <outline text="popular mechanics" title="popular mechanics" type="rss" 
+            xmlUrl="https://kill-the-newsletter.com/feeds/pi996eoapiafj9if.xml"/>
+      <outline text="The Free Press" title="The Free Press" type="rss" 
+            xmlUrl="https://www.thefp.com/feed" htmlUrl="https://www.thefp.com"/>
+      <outline text="Compact" title="Compact" type="rss" 
+            xmlUrl="https://www.compactmag.com/rss/" htmlUrl="https://www.compactmag.com/"/>
+  </outline>
+  <outline title="Current magazine issues" text="Current magazine issues">
+      <outline text="Business | The Atlantic" title="Business | The Atlantic" type="rss" 
+            xmlUrl="http://feeds.feedburner.com/AtlanticBusinessChannel" htmlUrl="https://www.theatlantic.com/business/"/>
+      <outline text="Reaction" title="Reaction" type="rss" 
+            xmlUrl="http://reaction.life/feed/" htmlUrl="https://www.reaction.life"/>
+      <outline text="Newscientist" title="Newscientist" type="rss" 
+            xmlUrl="https://www.newscientist.com/feed/issue/" htmlUrl="https://www.newscientist.com/"/>
+      <outline text="ROUGH TYPE" title="ROUGH TYPE" type="rss" 
+            xmlUrl="http://www.roughtype.com/?feed=rss2" htmlUrl="https://www.roughtype.com"/>
+      <outline text="The world this week" title="The world this week" type="rss" 
+            xmlUrl="http://www.economist.com/rss/the_world_this_week_rss.xml" htmlUrl="https://www.economist.com/the-world-this-week"/>
+      <outline text="Huck Magazine" title="Huck Magazine" type="rss" 
+            xmlUrl="http://www.huckmag.com/feed" htmlUrl="https://www.huckmag.com/"/>
+  </outline>
+  <outline title="Substacks" text="Substacks">
+      <outline text="Noah Carl" title="Noah Carl" type="rss" 
+            xmlUrl="https://noahcarl.substack.com/feed" htmlUrl="https://noahcarl.substack.com"/>
+      <outline text="Peter Nimitz" title="Peter Nimitz" type="rss" 
+            xmlUrl="https://nemets.substack.com/feed" htmlUrl="https://nemets.substack.com"/>
+      <outline text="Ed West" title="Ed West" type="rss" 
+            xmlUrl="https://edwest.substack.com/feed" htmlUrl="https://www.edwest.co.uk"/>
+      <outline text="Ben Sixsmith" title="Ben Sixsmith" type="rss" 
+            xmlUrl="https://bensixsmith.substack.com/feed" htmlUrl="https://www.bensixsmith.com"/>
+      <outline text="Aaron Mate" title="Aaron Mate" type="rss" 
+            xmlUrl="https://mate.substack.com/feed" htmlUrl="https://www.aaronmate.net"/>
+      <outline text="Joe Mayall" title="Joe Mayall" type="rss" 
+            xmlUrl="https://joewrote.substack.com/feed" htmlUrl="https://www.joewrote.com"/>
+      <outline text="Christopher Ingraham" title="Christopher Ingraham" type="rss" 
+            xmlUrl="https://thewhyaxis.substack.com/feed" htmlUrl="https://thewhyaxis.substack.com"/>
+      <outline text="James Pethokoukis" title="James Pethokoukis" type="rss" 
+            xmlUrl="https://fasterplease.substack.com/feed" htmlUrl="https://fasterplease.substack.com"/>
+      <outline text="Duncan Weldon" title="Duncan Weldon" type="rss" 
+            xmlUrl="https://duncanweldon.substack.com/feed" htmlUrl="https://duncanweldon.substack.com"/>
+      <outline text="Jeet Heer" title="Jeet Heer" type="rss" 
+            xmlUrl="https://jeetheer.substack.com/feed" htmlUrl="https://jeetheer.substack.com"/>
+      <outline text="Matt Stoller" title="Matt Stoller" type="rss" 
+            xmlUrl="https://mattstoller.substack.com/feed" htmlUrl="https://www.thebignewsletter.com"/>
+      <outline text="Katherine Dee" title="Default Friend" type="rss" 
+            xmlUrl="https://defaultfriend.substack.com/feed" htmlUrl="https://default.blog"/>
+      <outline text="Alex Turnbull" title="Alex Turnbull" type="rss" 
+            xmlUrl="https://syncretica.substack.com/feed" htmlUrl="https://syncretica.substack.com"/>
+      <outline text="Indian Bronson" title="Indian Bronson" type="rss" 
+            xmlUrl="https://indianbronson.substack.com/feed" htmlUrl="https://indianbronson.substack.com"/>
+      <outline text="Sam Freedman" title="Sam Freedman" type="rss" 
+            xmlUrl="https://samf.substack.com/feed" htmlUrl="https://samf.substack.com"/>
+      <outline text="Emil O. W. Kirkegaard" title="Emil O. W. Kirkegaard" type="rss" 
+            xmlUrl="https://kirkegaard.substack.com/feed" htmlUrl="https://www.emilkirkegaard.com"/>
+      <outline text="Ruy Teixeira" title="Ruy Teixeira" type="rss" 
+            xmlUrl="https://theliberalpatriot.substack.com/feed" htmlUrl="https://www.liberalpatriot.com"/>
+      <outline text="Razib Khan" title="Razib Khan" type="rss" 
+            xmlUrl="https://razib.substack.com/feed" htmlUrl="https://www.razibkhan.com"/>
+      <outline text="Freddie Deboer" title="Freddie Deboer" type="rss" 
+            xmlUrl="https://freddiedeboer.substack.com/feed" htmlUrl="https://freddiedeboer.substack.com"/>
+      <outline text="Anatoly Karlin" title="Anatoly Karlin" type="rss" 
+            xmlUrl="https://akarlin.substack.com/feed" htmlUrl="https://karlin.blog"/>
+      <outline text="Arnold Kling " title="Arnold Kling " type="rss" 
+            xmlUrl="https://arnoldkling.substack.com/feed" htmlUrl="https://arnoldkling.substack.com"/>
+      <outline text="Adam Tooze" title="Adam Tooze" type="rss" 
+            xmlUrl="https://adamtooze.substack.com/feed" htmlUrl="https://adamtooze.substack.com"/>
+      <outline text="Michael Tracey" title="Michael Tracey" type="rss" 
+            xmlUrl="https://mtracey.substack.com/feed" htmlUrl="https://www.mtracey.net"/>
+      <outline text=" Ross Douthat" title=" Ross Douthat" type="rss" 
+            xmlUrl="https://douthat.substack.com/feed/" htmlUrl="https://douthat.substack.com"/>
+      <outline text="Noah Smith" title="Noahpinion" type="rss" 
+            xmlUrl="https://noahpinion.substack.com/feed" htmlUrl="https://www.noahpinion.blog"/>
+      <outline text="Dominic cummings" title="Dominic cummings" type="rss" 
+            xmlUrl="https://dominiccummings.substack.com/feed" htmlUrl="https://dominiccummings.substack.com"/>
+      <outline text="Richard Hanania" title="Richard Hanania" type="rss" 
+            xmlUrl="https://richardhanania.substack.com/feed" htmlUrl="https://www.richardhanania.com"/>
+      <outline text="Robert Wright" title="Robert Wright" type="rss" 
+            xmlUrl="https://nonzero.substack.com/feed" htmlUrl="https://www.nonzero.org"/>
+      <outline text="Samo Burja" title="Samo Burja" type="rss" 
+            xmlUrl="https://bismarck.substack.com/feed" htmlUrl="https://brief.bismarckanalysis.com"/>
+      <outline text="Anthony Pompliano" title="Anthony Pompliano" type="rss" 
+            xmlUrl="https://pomp.substack.com/feed" htmlUrl="https://pomp.substack.com"/>
+      <outline text="Doomberg" title="Doomberg" type="rss" 
+            xmlUrl="https://doomberg.substack.com/feed" htmlUrl="https://newsletter.doomberg.com"/>
+      <outline text="Matthew Yglesias" title="Matthew Yglesias" type="rss" 
+            xmlUrl="https://matthewyglesias.substack.com/feed" htmlUrl="https://www.slowboring.com"/>
+      <outline text="Chris Arnade" title="Chris Arnade" type="rss" 
+            xmlUrl="https://intellectualinting.substack.com/feed" htmlUrl="https://walkingtheworld.substack.com"/>
+      <outline text="Francis&#39; Corner" title="NullSci" type="rss" 
+            xmlUrl="https://blackfrancis.substack.com/feed" htmlUrl="https://blackfrancis.substack.com"/>
+      <outline text="Mary Harrington" title="Mary Harrington" type="rss" 
+            xmlUrl="https://reactionaryfeminist.substack.com/feed" htmlUrl="https://www.maryharrington.co.uk"/>
+      <outline text="WrathOfGnon" title="WrathOfGnon" type="rss" 
+            xmlUrl="https://wrathofgnon.substack.com/feed" htmlUrl="https://wrathofgnon.substack.com"/>
+      <outline text=" Michael Muthukrishna" title=" Michael Muthukrishna" type="rss" 
+            xmlUrl="https://muthukrishnalab.substack.com/feed" htmlUrl="https://www.lab.muthukrishna.com"/>
+      <outline text="Shant Mesrobian" title="Shant Mesrobian" type="rss" 
+            xmlUrl="https://www.inquiremore.com/feed" htmlUrl="https://www.inquiremore.com"/>
+      <outline text="Conor Fitzgerald" title="Conor Fitzgerald" type="rss" 
+            xmlUrl="https://fitzfromdublin.substack.com/feed" htmlUrl="https://www.conorfitzgerald.com"/>
+      <outline text="George Hosu" title="George Hosu" type="rss" 
+            xmlUrl="https://www.epistem.ink/feed"/>
+      <outline text="Ab workout world" title="Ab workout world" type="rss" 
+            xmlUrl="https://abworkoutguy.substack.com/feed"/>
+      <outline text="Jeremy Driver" title="Jeremy Driver" type="rss" 
+            xmlUrl="https://normielisation.substack.com/feed" htmlUrl="https://normielisation.substack.com"/>
+      <outline text="Sam Atis" title="Sam Atis" type="rss" 
+            xmlUrl="https://atis.substack.com/feed" htmlUrl="https://www.samstack.io"/>
+      <outline text="Erik Hoel" title="Erik Hoel" type="rss" 
+            xmlUrl="https://erikhoel.substack.com/feed" htmlUrl="https://www.theintrinsicperspective.com"/>
+      <outline text="David Fuller" title="David Fuller" type="rss" 
+            xmlUrl="https://rebelwisdom.substack.com/feed" htmlUrl="https://beiner.substack.com"/>
+      <outline text="The 21st Century Salon" title="The 21st Century Salon" type="rss" 
+            xmlUrl="https://bprice.substack.com/feed" htmlUrl="https://bprice.substack.com"/>
+      <outline text="Center for the Study of Partisanship and Ideology" title="Center for the Study of Partisanship and Ideology" type="rss" 
+            xmlUrl="https://cspi.substack.com/feed" htmlUrl="https://www.cspicenter.com"/>
+      <outline text="Angela Nagle" title="Angela Nagle" type="rss" 
+            xmlUrl="https://angelanagle.substack.com/feed" htmlUrl="https://angelanagle.substack.com"/>
+      <outline text="Bryan Caplan" title="Bryan Caplan" type="rss" 
+            xmlUrl="https://betonit.substack.com/feed" htmlUrl="https://www.betonit.ai"/>
+      <outline text="In The Sight of the Unwise" title="In The Sight of the Unwise" type="rss" 
+            xmlUrl="https://inthesightoftheunwise.substack.com/feed" htmlUrl="https://inthesightoftheunwise.substack.com"/>
+      <outline text="Bruno Mecaes" title="Bruno Mecaes" type="rss" 
+            xmlUrl="https://brunomacaes.substack.com/feed" htmlUrl="https://brunomacaes.substack.com"/>
+      <outline text="Rob Henderson" title="Rob Henderson" type="rss" 
+            xmlUrl="https://robkhenderson.substack.com/feed" htmlUrl="https://www.robkhenderson.com"/>
+      <outline text=" Ryan Avent" title=" Ryan Avent" type="rss" 
+            xmlUrl="https://ryanavent.substack.com/feed" htmlUrl="https://ryanavent.substack.com"/>
+      <outline text="Ethan Strauss" title="Ethan Strauss" type="rss" 
+            xmlUrl="https://houseofstrauss.substack.com/feed" htmlUrl="https://www.houseofstrauss.com"/>
+      <outline text=" Byrne Hobart" title=" Byrne Hobart" type="rss" 
+            xmlUrl="https://www.thediff.co/feed" htmlUrl="https://www.thediff.co/"/>
+      <outline text="Kurt Gray" title="Kurt Gray" type="rss" 
+            xmlUrl="https://moralunderstanding.substack.com/feed" htmlUrl="https://www.moralunderstandingnewsletter.com"/>
+      <outline text="Joshua McConkey" title="Joshua McConkey" type="rss" 
+            xmlUrl="https://panalysis.substack.com/feed" htmlUrl="https://panalysis.substack.com"/>
+      <outline text=" Matt Clancy" title=" Matt Clancy" type="rss" 
+            xmlUrl="https://mattsclancy.substack.com/feed" htmlUrl="https://mattsclancy.substack.com"/>
+      <outline text="Gurwinder Bhogal" title="The Prism" type="rss" 
+            xmlUrl="https://gurwinder.substack.com/feed" htmlUrl="https://www.gurwinder.blog"/>
+      <outline text="Christopher Snowdon" title="Christopher Snowdon" type="rss" 
+            xmlUrl="https://snowdon.substack.com/feed" htmlUrl="https://snowdon.substack.com"/>
+      <outline text="Matt Goodwin" title="Matt Goodwin" type="rss" 
+            xmlUrl="https://mattgoodwin.substack.com/feed" htmlUrl="https://www.mattgoodwin.org"/>
+      <outline text="Michael Shellenberger" title="Michael Shellenberger" type="rss" 
+            xmlUrl="https://michaelshellenberger.substack.com/feed" htmlUrl="https://www.public.news"/>
+      <outline text="Ted Gioia" title="Ted Gioia" type="rss" 
+            xmlUrl="https://tedgioia.substack.com/feed" htmlUrl="https://www.honest-broker.com"/>
+      <outline text="Saloni Dattani" title="Saloni Dattani" type="rss" 
+            xmlUrl="https://salonium.substack.com/feed" htmlUrl="https://www.scientificdiscovery.dev"/>
+      <outline text="Branko Milanovic" title="Branko Milanovic" type="rss" 
+            xmlUrl="https://branko2f7.substack.com/feed" htmlUrl="https://branko2f7.substack.com"/>
+      <outline text="Beneath the Surface " title="Beneath the Surface " type="rss" 
+            xmlUrl="https://pmeadhbh.substack.com/feed" htmlUrl="https://maevep.substack.com"/>
+      <outline text=" Misha Saul" title=" Misha Saul" type="rss" 
+            xmlUrl="https://kvetch.substack.com/feed" htmlUrl="https://www.kvetch.au"/>
+      <outline text="Sasha Chapin" title="Sasha Chapin" type="rss" 
+            xmlUrl="http://sashachapin.substack.com/feed" htmlUrl="https://sashachapin.substack.com"/>
+      <outline text=" Dave Greene" title=" Dave Greene" type="rss" 
+            xmlUrl="https://fiddlersgreene.substack.com/feed" htmlUrl="https://fiddlersgreene.substack.com"/>
+      <outline text="Works in Progress&#39;s newsletter" title="Works in Progress&#39;s newsletter" type="rss" 
+            xmlUrl="https://worksinprogress.substack.com/feed" htmlUrl="https://www.worksinprogress.news"/>
+      <outline text="andrew sullivan" title="andrew sullivan" type="rss" 
+            xmlUrl="https://andrewsullivan.substack.com/feed" htmlUrl="https://andrewsullivan.substack.com"/>
+      <outline text="Josh Barro" title="Josh Barro" type="rss" 
+            xmlUrl="https://www.joshbarro.com/feed" htmlUrl="https://www.joshbarro.com"/>
+      <outline text="Mark P Xu Neyer" title="Mark P Xu Neyer" type="rss" 
+            xmlUrl="https://apxhard.substack.com/feed" htmlUrl="https://apxhard.substack.com"/>
+      <outline text="James O&#39;Malley" title="james o&#39;malley" type="rss" 
+            xmlUrl="https://takes.jamesomalley.co.uk/feed" htmlUrl="https://takes.jamesomalley.co.uk"/>
+      <outline text="Rian Chad Whitton" title="Rian Chad Whitton" type="rss" 
+            xmlUrl="https://riancwhitton.substack.com/feed" htmlUrl="https://riancwhitton.substack.com"/>
+      <outline text="Andreas Steno Larsen" title="Andreas Steno Larsen" type="rss" 
+            xmlUrl="https://andreassteno.substack.com/feed" htmlUrl="https://andreassteno.substack.com"/>
+      <outline text="Dan Elton" title="Dan Elton" type="rss" 
+            xmlUrl="https://moreisdifferent.substack.com/feed" htmlUrl="https://moreisdifferent.blog"/>
+      <outline text="The Red Quest " title="The Red Quest " type="rss" 
+            xmlUrl="https://theredquest.substack.com/feed" htmlUrl="https://theredquest.substack.com"/>
+      <outline text="Big Serge Thought" title="Big Serge Thought" type="rss" 
+            xmlUrl="https://bigserge.substack.com/feed" htmlUrl="https://bigserge.substack.com"/>
+      <outline text="Parsimony&#39;s Panpharmacon " title="Parsimony&#39;s Panpharmacon " type="rss" 
+            xmlUrl="https://panpharmacon.substack.com/feed" htmlUrl="https://panpharmacon.substack.com"/>
+      <outline text="will jennings" title="will jennings" type="rss" 
+            xmlUrl="https://willjennings.substack.com/feed" htmlUrl="https://willjennings.substack.com"/>
+      <outline text="Jonn Elledge" title="Jonn Elledge" type="rss" 
+            xmlUrl="https://jonn.substack.com/feed" htmlUrl="https://jonn.substack.com"/>
+      <outline text="Caleb Ontiveros" title="Caleb Ontiveros" type="rss" 
+            xmlUrl="https://calebontiveros.substack.com/feed" htmlUrl="https://calebontiveros.substack.com"/>
+      <outline text="Jonathan Haidt" title="Jonathan Haidt" type="rss" 
+            xmlUrl="https://jonathanhaidt.substack.com/feed" htmlUrl="https://www.afterbabel.com"/>
+      <outline text="Seymour Hersh" title="Seymour Hersh" type="rss" 
+            xmlUrl="https://seymourhersh.substack.com/feed" htmlUrl="https://seymourhersh.substack.com"/>
+      <outline text="Thomas Prosser" title="Thomas Prosser" type="rss" 
+            xmlUrl="https://thomasprosser.substack.com/feed" htmlUrl="https://www.thepathnottaken.net"/>
+      <outline text="~~datahazard~~" title="~~datahazard~~" type="rss" 
+            xmlUrl="https://datahazard.substack.com/feed" htmlUrl="https://datahazard.substack.com"/>
+      <outline text="Dan Davies" title="Dan Davies" type="rss" 
+            xmlUrl="https://backofmind.substack.com/feed" htmlUrl="https://backofmind.substack.com"/>
+      <outline text="Sheluyang Peng" title="Sheluyang Peng" type="rss" 
+            xmlUrl="https://societystandpoint.substack.com/feed" htmlUrl="https://www.societystandpoint.com"/>
+      <outline text="Aporia" title="Aporia" type="rss" 
+            xmlUrl="https://www.aporiamagazine.com/feed" htmlUrl="https://www.aporiamagazine.com"/>
+      <outline text="mick ryan" title="mick ryan" type="rss" 
+            xmlUrl="https://mickryan.substack.com/feed" htmlUrl="https://mickryan.substack.com"/>
+      <outline text="Frank Furedi" title="Frank Furedi" type="rss" 
+            xmlUrl="https://frankfuredi.substack.com/feed" htmlUrl="https://frankfuredi.substack.com"/>
+      <outline text="daniel salt" title="DANIEL SALT" type="rss" 
+            xmlUrl="https://politicallyhomeless.substack.com/feed" htmlUrl="https://politicallyhomeless.substack.com"/>
+      <outline text="Cremieux Recueil" title="Cremieux Recueil" type="rss" 
+            xmlUrl="https://cremieux.substack.com/feed" htmlUrl="https://www.cremieux.xyz"/>
+      <outline text="Affective Medicine" title="Affective Medicine" type="rss" 
+            xmlUrl="https://affectivemedicine.substack.com/feed" htmlUrl="https://affectivemedicine.substack.com"/>
+      <outline text="Tony Yates" title="Tony Yates" type="rss" 
+            xmlUrl="https://longandvariable.substack.com/feed" htmlUrl="https://longandvariable.substack.com"/>
+      <outline text="ANDRE COOPER" title="ANDRE COOPER" type="rss" 
+            xmlUrl="https://goodreason.substack.com/feed" htmlUrl="https://goodreason.substack.com"/>
+      <outline text="Lionel Page" title="Lionel Page" type="rss" 
+            xmlUrl="https://lionelpage.substack.com/feed" htmlUrl="https://www.optimallyirrational.com"/>
+      <outline text="Scott Greer" title="Scott Greer" type="rss" 
+            xmlUrl="https://highlyrespected.substack.com/feed" htmlUrl="https://www.highly-respected.com"/>
+      <outline text="Capital Flows and Asset Markets" title="Capital Flows and Asset Markets" type="rss" 
+            xmlUrl="https://www.russell-clark.com/feed" htmlUrl="https://www.russell-clark.com"/>
+      <outline text="Simplicius&#39;s Garden of Knowledge" title="Simplicius&#39;s Garden of Knowledge" type="rss" 
+            xmlUrl="https://simplicius76.substack.com/feed" htmlUrl="https://simplicius76.substack.com"/>
+      <outline text="Andy Milburn" title="Andy Milburn" type="rss" 
+            xmlUrl="https://amilburn.substack.com/feed" htmlUrl="https://amilburn.substack.com"/>
+      <outline text="John Mearsheimer" title="John Mearsheimer" type="rss" 
+            xmlUrl="https://mearsheimer.substack.com/feed" htmlUrl="https://mearsheimer.substack.com"/>
+      <outline text="Sinobabble" title="Sinobabble" type="rss" 
+            xmlUrl="https://sinobabble.substack.com/feed" htmlUrl="https://sinobabble.substack.com"/>
+      <outline text="Arjun Panickssery" title="Arjun Panickssery" type="rss" 
+            xmlUrl="https://arjunpanickssery.substack.com/feed" htmlUrl="https://arjunpanickssery.substack.com"/>
+      <outline text="Joxley Writes" title="Joxley Writes" type="rss" 
+            xmlUrl="https://www.joxleywrites.jmoxley.co.uk/feed" htmlUrl="https://www.joxleywrites.jmoxley.co.uk"/>
+      <outline text="Marcus on AI" title="Marcus on AI" type="rss" 
+            xmlUrl="https://garymarcus.substack.com/feed" htmlUrl="https://garymarcus.substack.com"/>
+      <outline text="Ben Ansell" title="Ben Ansell" type="rss" 
+            xmlUrl="https://benansell.substack.com/feed" htmlUrl="https://benansell.substack.com"/>
+      <outline text="Public" title="Public" type="rss" 
+            xmlUrl="https://public.substack.com/feed" htmlUrl="https://www.public.news"/>
+      <outline text="Not On Your Team, But Always Fair" title="Not On Your Team, But Always Fair" type="rss" 
+            xmlUrl="https://www.notonyourteam.co.uk/feed" htmlUrl="https://www.notonyourteam.co.uk"/>
+      <outline text="Lonely Robot Theme" title="Lonely Robot Theme" type="rss" 
+            xmlUrl="https://lonelyrobottheme.substack.com/feed" htmlUrl="https://lonelyrobottheme.substack.com"/>
+      <outline text="Oliver Bateman " title="Oliver Bateman " type="rss" 
+            xmlUrl="https://oliverbatemandoesthework.substack.com/feed" htmlUrl="https://oliverbatemandoesthework.substack.com"/>
+      <outline text="Sam Dumitriu" title="Sam Dumitriu" type="rss" 
+            xmlUrl="https://www.samdumitriu.com/feed" htmlUrl="https://www.samdumitriu.com"/>
+      <outline text="Ruben Laukkonen" title="Ruben Laukkonen" type="rss" 
+            xmlUrl="https://rubenlaukkonen.substack.com/feed" htmlUrl="https://rubenlaukkonen.substack.com"/>
+      <outline text="Astral Codex Ten" title="Astral Codex Ten" type="rss" 
+            xmlUrl="https://www.astralcodexten.com/feed" htmlUrl="https://www.astralcodexten.com"/>
+      <outline text="aella" title="aella" type="rss" 
+            xmlUrl="https://aella.substack.com/feed" htmlUrl="https://aella.substack.com"/>
+      <outline text="Oliver Johnson" title="Oliver Johnson" type="rss" 
+            xmlUrl="https://bristoliver.substack.com/feed" htmlUrl="https://bristoliver.substack.com"/>
+      <outline text="MAX GOODBIRD" title="MAX GOODBIRD" type="rss" 
+            xmlUrl="https://superbowl.substack.com/feed" htmlUrl="https://superbowl.substack.com"/>
+      <outline text="Konstantin Kisin" title="Konstantin Kisin" type="rss" 
+            xmlUrl="https://www.konstantinkisin.com/feed" htmlUrl="https://www.konstantinkisin.com"/>
+      <outline text="Damir Marusic" title="Damir Marusic" type="rss" 
+            xmlUrl="https://wisdomofcrowds.live/feed" htmlUrl="https://wisdomofcrowds.live"/>
+      <outline text="Alex Berenson" title="Alex Berenson" type="rss" 
+            xmlUrl="https://alexberenson.substack.com/feed" htmlUrl="https://alexberenson.substack.com"/>
+      <outline text="nate silver" title="nate silver" type="rss" 
+            xmlUrl="https://www.natesilver.net/feed" htmlUrl="https://www.natesilver.net"/>
+      <outline text="DARK FUTURA" title="DARK FUTURA" type="rss" 
+            xmlUrl="https://darkfutura.substack.com/feed" htmlUrl="https://darkfutura.substack.com"/>
+      <outline text="Nathan Cofnas’s Newsletter" title="Nathan Cofnas’s Newsletter" type="rss" 
+            xmlUrl="https://ncofnas.com/feed" htmlUrl="https://ncofnas.com"/>
+      <outline text="Abigail Shrier" title="Abigail Shrier" type="rss" 
+            xmlUrl="https://www.thetruthfairy.info/feed" htmlUrl="https://www.thetruthfairy.info"/>
+      <outline text="Dominic de Bettencourt" title="Dominic de Bettencourt" type="rss" 
+            xmlUrl="https://dominicdb.substack.com/feed" htmlUrl="https://dominicdb.substack.com"/>
+      <outline text="Andrew Korybko&#39;s Newsletter" title="Andrew Korybko&#39;s Newsletter" type="rss" 
+            xmlUrl="https://korybko.substack.com/feed" htmlUrl="https://korybko.substack.com"/>
+      <outline text="Niccolo Soldo" title="Niccolo Soldo" type="rss" 
+            xmlUrl="https://niccolo.substack.com/feed" htmlUrl="https://niccolo.substack.com"/>
+      <outline text="Frontelligence Insight" title="Frontelligence Insight" type="rss" 
+            xmlUrl="https://frontelligence.substack.com/feed" htmlUrl="https://frontelligence.substack.com"/>
+      <outline text="Ruxandra Teslo" title="Ruxandra Teslo" type="rss" 
+            xmlUrl="https://www.writingruxandrabio.com/feed" htmlUrl="https://www.writingruxandrabio.com"/>
+      <outline text="Sebastian Jensen" title="Sebastian Jensen" type="rss" 
+            xmlUrl="https://www.sebjenseb.net/feed" htmlUrl="https://www.technotheoria.org"/>
+      <outline text="Political Currents by Ross Barkan" title="Political Currents by Ross Barkan" type="rss" 
+            xmlUrl="https://rosselliotbarkan.com/feed" htmlUrl="https://rosselliotbarkan.com"/>
+      <outline text="Robin Hanson" title="Overcoming Bias" type="rss" 
+            xmlUrl="https://www.overcomingbias.com/feed" htmlUrl="https://www.overcomingbias.com"/>
+      <outline text="Maxwell Tabarrok" title="Maxwell Tabarrok" type="rss" 
+            xmlUrl="https://www.maximum-progress.com/feed" htmlUrl="https://www.maximum-progress.com"/>
+      <outline text="The Anglofuturist" title="The Anglofuturist" type="rss" 
+            xmlUrl="https://anglofuturistmag.substack.com/feed"/>
+      <outline text="Not With a Bang" title="Not With a Bang" type="rss" 
+            xmlUrl="https://arctotherium.substack.com/feed" htmlUrl="https://arctotherium.substack.com"/>
+      <outline text="The Ruffian" title="The Ruffian" type="rss" 
+            xmlUrl="https://www.ian-leslie.com/feed" htmlUrl="https://www.ian-leslie.com"/>
+      <outline text="Conspicuous Cognition" title="Conspicuous Cognition" type="rss" 
+            xmlUrl="https://www.conspicuouscognition.com/feed" htmlUrl="https://www.conspicuouscognition.com"/>
+      <outline text="Ron Ghosh" title="Ron Ghosh" type="rss" 
+            xmlUrl="https://ronghosh.substack.com/feed" htmlUrl="https://ronghosh.substack.com"/>
+      <outline text="Isaac young" title="Isaac young" type="rss" 
+            xmlUrl="https://isaacyoung.substack.com/feed" htmlUrl="https://isaacyoung.substack.com"/>
+      <outline text="Magdalene" title="Magdalene" type="rss" 
+            xmlUrl="https://magdalene.substack.com/feed" htmlUrl="https://www.sexual-culture.com"/>
+      <outline text="Michael Strong" title="Michael Strong" type="rss" 
+            xmlUrl="https://michaelstrong.substack.com/feed" htmlUrl="https://michaelstrong.substack.com"/>
+      <outline text="Henry Farrell" title="Henry Farrell" type="rss" 
+            xmlUrl="https://openrss.org/substack.com/@henryfarrell" htmlUrl="https://substack.com/@henryfarrell"/>
+      <outline text="Becoming Noble" title="Becoming Noble" type="rss" 
+            xmlUrl="https://becomingnoble.substack.com/feed" htmlUrl="https://becomingnoble.substack.com"/>
+      <outline text="The Library of Celaeno" title="The Library of Celaeno" type="rss" 
+            xmlUrl="https://librarianofcelaeno.substack.com/feed" htmlUrl="https://librarianofcelaeno.substack.com"/>
+      <outline text="Glenn Diesen" title="Glenn Diesen" type="rss" 
+            xmlUrl="https://glenndiesen.substack.com/feed" htmlUrl="https://glenndiesen.substack.com"/>
+      <outline text="The Multipolarity Substack" title="The Multipolarity Substack" type="rss" 
+            xmlUrl="https://multipolaritypod.substack.com/feed" htmlUrl="https://multipolaritypod.substack.com"/>
+      <outline text="Philip Pilkington" title="Philip Pilkington" type="rss" 
+            xmlUrl="https://macrocosm.substack.com/feed" htmlUrl="https://macrocosm.substack.com"/>
+      <outline text="Louise Perry" title="Louise Perry" type="rss" 
+            xmlUrl="https://www.louiseperry.co.uk/feed" htmlUrl="https://www.louiseperry.co.uk"/>
+      <outline text="Cartoons Hate Her" title="Cartoons Hate Her" type="rss" 
+            xmlUrl="https://www.cartoonshateher.com/feed" htmlUrl="https://www.cartoonshateher.com"/>
+      <outline text="Moly’s china Substack" title="Moly’s china Substack" type="rss" 
+            xmlUrl="http://weibo.substack.com/feed" htmlUrl="https://weibo.substack.com"/>
+      <outline text="Martin Robbins" title="Martin Robbins" type="rss" 
+            xmlUrl="https://martinrobbins.substack.com/feed" htmlUrl="https://martinrobbins.substack.com"/>
+      <outline text="Luca Watson" title="Luca Watson" type="rss" 
+            xmlUrl="https://lucaajwatson.substack.com/feed" htmlUrl="https://lucaajwatson.substack.com"/>
+      <outline text="Kenneth Rogoff" title="Kenneth Rogoff" type="rss" 
+            xmlUrl="https://kennethrogoff.substack.com/feed" htmlUrl="https://kennethrogoff.substack.com"/>
+      <outline text="Millennial Woes" title="Millennial Woes" type="rss" 
+            xmlUrl="https://millennialwoes.substack.com/feed" htmlUrl="https://www.woes.blog"/>
+      <outline text="Fred Sculthorp" title="Fred Sculthorp" type="rss" 
+            xmlUrl="https://badapocalypse.substack.com/feed" htmlUrl="https://badapocalypse.substack.com"/>
+      <outline text="Economics Observatory" title="Economics Observatory" type="rss" 
+            xmlUrl="https://daviesrichard.substack.com/feed" htmlUrl="https://daviesrichard.substack.com"/>
+      <outline text="Joseph Heath" title="Joseph Heath" type="rss" 
+            xmlUrl="https://josephheath.substack.com/feed" htmlUrl="https://josephheath.substack.com"/>
+      <outline text="Raw Egg Nationalist" title="Raw Egg Nationalist" type="rss" 
+            xmlUrl="https://www.raweggstack.com/feed" htmlUrl="https://www.raweggstack.com"/>
+      <outline text="Tyler Cowen" title="Tyler Cowen" type="rss" 
+            xmlUrl="https://tylercowen.substack.com/feed" htmlUrl="https://tylercowen.substack.com"/>
+      <outline text="Warwick Powell&#39;s Substack" title="Warwick Powell&#39;s Substack" type="rss" 
+            xmlUrl="https://warwickpowell.substack.com/feed" htmlUrl="https://warwickpowell.substack.com"/>
+      <outline text="balajis.com" title="balajis.com" type="rss" 
+            xmlUrl="https://balajis.com/feed" htmlUrl="https://balajis.com"/>
+      <outline text="Megan McArdle" title="Megan McArdle" type="rss" 
+            xmlUrl="https://mcsudermans.substack.com/feed" htmlUrl="https://mcsudermans.substack.com"/>
+      <outline text="Ethan Ding" title="Ethan Ding" type="rss" 
+            xmlUrl="https://ethanding.substack.com/feed" htmlUrl="https://ethanding.substack.com"/>
+      <outline text="Alex Krainer&#39;s Substack" title="Alex Krainer&#39;s Substack" type="rss" 
+            xmlUrl="https://alexkrainer.substack.com/feed" htmlUrl="https://alexkrainer.substack.com"/>
+      <outline text="David Henderson" title="David Henderson" type="rss" 
+            xmlUrl="https://davidrhenderson.substack.com/feed" htmlUrl="https://davidrhenderson.substack.com"/>
+      <outline text="Phillips P. OBrien" title="Phillips P. OBrien" type="rss" 
+            xmlUrl="https://phillipspobrien.substack.com/feed" htmlUrl="https://phillipspobrien.substack.com"/>
+      <outline text="The Week in Polls" title="The Week in Polls" type="rss" 
+            xmlUrl="https://theweekinpolls.substack.com/feed" htmlUrl="https://theweekinpolls.substack.com"/>
+      <outline text="James Bloodworth" title="James Bloodworth" type="rss" 
+            xmlUrl="https://www.forthedeskdrawer.com/feed" htmlUrl="https://www.forthedeskdrawer.com"/>
+      <outline text="Derek Thompson" title="Derek Thompson" type="rss" 
+            xmlUrl="https://www.derekthompson.org/feed" htmlUrl="https://www.derekthompson.org"/>
+      <outline text="Adam Mastroianni" title="Adam Mastroianni" type="rss" 
+            xmlUrl="https://experimentalhistory.substack.com/feed" htmlUrl="https://www.experimental-history.com"/>
+      <outline text="Curtis Yarvin" title="Curtis Yarvin" type="rss" 
+            xmlUrl="https://graymirror.substack.com/feed" htmlUrl="https://graymirror.substack.com"/>
+      <outline text="John Ganz" title="John Ganz" type="rss" 
+            xmlUrl="https://www.unpopularfront.news/feed" htmlUrl="https://www.unpopularfront.news"/>
+      <outline text="Nate’s Substack" title="Nate’s Substack" type="rss" 
+            xmlUrl="https://natesnewsletter.substack.com/feed" htmlUrl="https://natesnewsletter.substack.com"/>
+      <outline text="Michael Hill" title="Michael Hill" type="rss" 
+            xmlUrl="https://catchingmice.substack.com/feed" htmlUrl="https://catchingmice.substack.com"/>
+      <outline text="Michael Green" title="Michael Green" type="rss" 
+            xmlUrl="https://www.yesigiveafig.com/feed" htmlUrl="https://www.yesigiveafig.com"/>
+      <outline text="Connor Tomlinson" title="Connor Tomlinson" type="rss" 
+            xmlUrl="https://connortomlinson.substack.com/feed" htmlUrl="https://connortomlinson.substack.com"/>
+      <outline text="Londonist: Keys to the City" title="Londonist: Keys to the City" type="rss" 
+            xmlUrl="https://londonistcitykeys.substack.com/feed" htmlUrl="https://londonistcitykeys.substack.com"/>
+      <outline text="eugyppius: a plague chronicle" title="eugyppius: a plague chronicle" type="rss" 
+            xmlUrl="https://www.eugyppius.com/feed" htmlUrl="https://www.eugyppius.com"/>
+      <outline text="not not Talmud" title="not not Talmud" type="rss" 
+            xmlUrl="https://notnottalmud.substack.com/feed" htmlUrl="https://notnottalmud.substack.com"/>
+      <outline text="The Argument" title="The Argument" type="rss" 
+            xmlUrl="https://www.theargumentmag.com/feed" htmlUrl="https://www.theargumentmag.com"/>
+      <outline text="peepeepoopoo" title="peepeepoopoo" type="rss" 
+            xmlUrl="https://deepdishenjoyer.substack.com/feed" htmlUrl="https://deepdishenjoyer.substack.com"/>
+      <outline text="Bovril-Gesellschaft" title="Bovril-Gesellschaft" type="rss" 
+            xmlUrl="https://incestandmorrisdancing.substack.com/feed" htmlUrl="https://incestandmorrisdancing.substack.com"/>
+      <outline text="Danger Post" title="Danger Post" type="rss" 
+            xmlUrl="https://dangerpost.substack.com/feed" htmlUrl="https://dangerpost.substack.com"/>
+      <outline text="Jack Cashill" title="Jack Cashill" type="rss" 
+            xmlUrl="https://jack.substack.com/feed" htmlUrl="https://jack.substack.com"/>
+      <outline text="Kristian Niemietz" title="Kristian Niemietz" type="rss" 
+            xmlUrl="https://kristianniemietz.substack.com/feed" htmlUrl="https://kristianniemietz.substack.com"/>
+      <outline text="Seph&#39;s Substack" title="Seph&#39;s Substack" type="rss" 
+            xmlUrl="https://sephnewman.substack.com/feed" htmlUrl="https://sephnewman.substack.com"/>
+      <outline text="Nick Asbury" title="Nick Asbury" type="rss" 
+            xmlUrl="https://nickasbury.substack.com/feed" htmlUrl="https://nickasbury.substack.com"/>
+      <outline text="Rohan Ghostwind" title="Rohan Ghostwind" type="rss" 
+            xmlUrl="https://brackishwatersbarrensoil.substack.com/feed" htmlUrl="https://brackishwatersbarrensoil.substack.com"/>
+      <outline text="Closing the Delta" title="Closing the Delta" type="rss" 
+            xmlUrl="https://salusa.substack.com/feed" htmlUrl="https://salusa.substack.com"/>
+      <outline text="David Stewart" title="David Stewart" type="rss" 
+            xmlUrl="https://davidvstewart.substack.com/feed" htmlUrl="https://davidvstewart.substack.com"/>
+      <outline text="Will Solfiac&#39;s Newsletter" title="Will Solfiac&#39;s Newsletter" type="rss" 
+            xmlUrl="https://www.willsolfiac.com/feed" htmlUrl="https://www.willsolfiac.com"/>
+      <outline text="David Turver" title="David Turver" type="rss" 
+            xmlUrl="https://davidturver.substack.com/feed" htmlUrl="https://davidturver.substack.com"/>
+      <outline text="Chris Bond" title="Chris Bond" type="rss" 
+            xmlUrl="https://chrisbond.substack.com/feed" htmlUrl="https://chrisbond.substack.com"/>
+      <outline text="Richard Lyon" title="Richard Lyon" type="rss" 
+            xmlUrl="https://richardlyon.substack.com/feed" htmlUrl="https://richardlyon.substack.com"/>
+      <outline text="Tom Shepstone" title="Tom Shepstone" type="rss" 
+            xmlUrl="https://energysecurityfreedom.substack.com/feed" htmlUrl="https://energysecurityfreedom.substack.com"/>
+      <outline text="Chris collins" title="Chris collins" type="rss" 
+            xmlUrl="https://chriscollins756.substack.com/feed" htmlUrl="https://chriscollins756.substack.com"/>
+      <outline text="Rich Holmes " title="Rich Holmes " type="rss" 
+            xmlUrl="https://departmentofproduct.substack.com/feed" htmlUrl="https://departmentofproduct.substack.com"/>
+      <outline text="The Brawl Street Journal" title="The Brawl Street Journal" type="rss" 
+            xmlUrl="https://brawlstreetjournal.substack.com/feed" htmlUrl="https://brawlstreetjournal.substack.com"/>
+      <outline text="The Nemeth Report’s Substack" title="The Nemeth Report’s Substack" type="rss" 
+            xmlUrl="https://thenemethreport.substack.com/feed" htmlUrl="https://thenemethreport.substack.com"/>
+      <outline text="Lauren’s data Substack" title="Lauren’s data Substack" type="rss" 
+            xmlUrl="https://laurenleek.substack.com/feed" htmlUrl="https://laurenleek.substack.com"/>
+      <outline text="Archie Hall" title="Archie Hall" type="rss" 
+            xmlUrl="https://notes.archie-hall.com/feed" htmlUrl="https://notes.archie-hall.com"/>
+      <outline text="Quant Enthusiasts" title="Quant Enthusiasts" type="rss" 
+            xmlUrl="https://youngandcalculated.substack.com/feed" htmlUrl="https://youngandcalculated.substack.com"/>
+      <outline text="Prof G Media" title="Prof G Media" type="rss" 
+            xmlUrl="https://www.profgmedia.com/feed" htmlUrl="https://www.profgmedia.com"/>
+      <outline text="Ed Conway" title="Ed Conway" type="rss" 
+            xmlUrl="https://edconway.substack.com/feed" htmlUrl="https://edconway.substack.com"/>
+      <outline text="PyQuant News" title="PyQuant News" type="rss" 
+            xmlUrl="https://pyquantnews.substack.com/feed" htmlUrl="https://pyquantnews.substack.com"/>
+      <outline text="Tomas Pueyo" title="Tomas Pueyo" type="rss" 
+            xmlUrl="https://unchartedterritories.tomaspueyo.com/feed" htmlUrl="https://unchartedterritories.tomaspueyo.com"/>
+      <outline text="Matt Beard" title="Matt Beard" type="rss" 
+            xmlUrl="https://thatvastvariety.substack.com/feed" htmlUrl="https://thatvastvariety.substack.com"/>
+      <outline text="Scott Grout" title="Scott Grout" type="rss" 
+            xmlUrl="https://needsofthemany98.substack.com/feed" htmlUrl="https://needsofthemany98.substack.com"/>
+      <outline text="Dan Lewis" title="Dan Lewis" type="rss" 
+            xmlUrl="https://danlewis8.substack.com/feed" htmlUrl="https://danlewis8.substack.com"/>
+      <outline text="The Value Philosopher" title="The Value Philosopher" type="rss" 
+            xmlUrl="https://thevaluephilosopher.substack.com/feed" htmlUrl="https://thevaluephilosopher.substack.com"/>
+      <outline text="Nicole Williams" title="Nicole Williams" type="rss" 
+            xmlUrl="https://pmresearcher.substack.com/feed" htmlUrl="https://pmresearcher.substack.com"/>
+      <outline text="Stefan Schubert" title="Stefan Schubert" type="rss" 
+            xmlUrl="https://www.update.news/feed" htmlUrl="https://www.update.news"/>
+      <outline text="Wood From Eden" title="Wood From Eden" type="rss" 
+            xmlUrl="https://woodfromeden.substack.com/feed" htmlUrl="https://woodfromeden.substack.com"/>
+  </outline>
+  <outline title="Dota" text="Dota">
+      <outline text="Dotabuff" title="Dotabuff" type="rss" 
+            xmlUrl="http://dotabuff.com/blog.rss" htmlUrl="https://www.dotabuff.com/blog" entryContent="3"/>
+  </outline>
+  <outline title="Blogs" text="Blogs">
+      <outline text="Hannah Ritchie" title="Hannah Ritchie" type="rss" 
+            xmlUrl="http://hannahritchie.com/feed/"/>
+      <outline text="Balaji Srinivasan" title="Balajis" type="rss" 
+            xmlUrl="https://balajis.com/rss/"/>
+      <outline text="Steve Faktor" title="Steve Faktor" type="rss" 
+            xmlUrl="https://stevefaktor.com/feed/" htmlUrl="https://stevefaktor.com/"/>
+      <outline text="Polemic Paine" title="Polemic Paine" type="rss" 
+            xmlUrl="http://feeds.feedburner.com/PolemicsPains" htmlUrl="https://polemics-pains.blogspot.com/"/>
+      <outline text="Penelope Trunk " title="Penelope Trunk " type="rss" 
+            xmlUrl="http://feeds.feedburner.com/BrazenCareerist" htmlUrl="https://blog.penelopetrunk.com/"/>
+      <outline text="Cold Takes" title="Cold Takes" type="rss" 
+            xmlUrl="https://www.cold-takes.com/rss/" htmlUrl="https://www.cold-takes.com/"/>
+      <outline text="Nicky Case" title="Nicky Case" type="rss" 
+            xmlUrl="https://ncase.me/feed.xml" htmlUrl="https://ncase.me/"/>
+      <outline text=" Robin Hanson" title=" Robin Hanson" type="rss" 
+            xmlUrl="http://www.overcomingbias.com/feed" htmlUrl="https://www.overcomingbias.com"/>
+      <outline text="Justin Murphy" title="Justin Murphy" type="rss" 
+            xmlUrl="https://theotherlifenow.com/feed/"/>
+      <outline text="David A. Hopkins" title="David A. Hopkins" type="rss" 
+            xmlUrl="http://www.honestgraft.com/feeds/posts/default" htmlUrl="http://www.honestgraft.com/"/>
+      <outline text="Dan Wang" title="Dan Wang" type="rss" 
+            xmlUrl="http://danwang.co/feed/" htmlUrl="https://danwang.co/"/>
+      <outline text="Venkatesh Rao" title="Venkatesh Rao" type="rss" 
+            xmlUrl="http://www.ribbonfarm.com/feed/" htmlUrl="https://www.ribbonfarm.com"/>
+      <outline text="Conrad Bastable" title="Conrad Bastable" type="rss" 
+            xmlUrl="https://www.conradbastable.com/essays?format=rss" htmlUrl="https://www.conradbastable.com/essays/"/>
+      <outline text="Scott Galloway" title="Scott Galloway" type="rss" 
+            xmlUrl="https://www.profgalloway.com/feed" htmlUrl="https://www.profgalloway.com/"/>
+      <outline text="Mickey Kaus" title="Kausfiles" type="rss" 
+            xmlUrl="https://kaus.substack.com/feed/" htmlUrl="https://kaus.substack.com"/>
+      <outline text="Tyler Cowen" title="Tyler Cowen" type="rss" 
+            xmlUrl="http://www.marginalrevolution.com/marginalrevolution/index.rdf" htmlUrl="https://marginalrevolution.com/"/>
+      <outline text="Branko Milanovic" title="Branko Milanovic" type="rss" 
+            xmlUrl="http://glineq.blogspot.com/feeds/posts/default?alt=rss" htmlUrl="http://glineq.blogspot.com/"/>
+      <outline text="Bryan Caplan" title="Bryan Caplan" type="rss" 
+            xmlUrl="https://betonit.blog/feed/"/>
+      <outline text="Scott Alexander" title="Scott Alexander" type="rss" 
+            xmlUrl="https://astralcodexten.substack.com/feed" htmlUrl="https://www.astralcodexten.com"/>
+      <outline text="David Perell" title="David Perell" type="rss" 
+            xmlUrl="http://www.perell.com/blog?format=RSS" htmlUrl="https://perell.com/"/>
+      <outline text="Red pilled Dad" title="Red pilled Dad" type="rss" 
+            xmlUrl="https://redpilldad.blog/feed/"/>
+      <outline text="The Red Quest" title="The Red Quest" type="rss" 
+            xmlUrl="https://theredquest.wordpress.com/feed/" htmlUrl="https://theredquest.wordpress.com"/>
+      <outline text="Tim Urban" title="Tim Urban" type="rss" 
+            xmlUrl="http://waitbutwhy.com/feed" htmlUrl="https://waitbutwhy.com/"/>
+      <outline text="Tiago Forte" title="Tiago Forte" type="rss" 
+            xmlUrl="https://praxis.fortelabs.co/feed" htmlUrl="https://fortelabs.com/"/>
+      <outline text="Darius Foroux" title="http://dariusforoux.com/feed/" type="rss" 
+            xmlUrl="http://dariusforoux.com/feed/" htmlUrl="https://dariusforoux.com/"/>
+      <outline text="Cal Newport" title="Cal Newport" type="rss" 
+            xmlUrl="http://feeds.feedburner.com/StudyHacks" htmlUrl="https://calnewport.com/blog/"/>
+      <outline text="Eric Barker" title="Eric Barker" type="rss" 
+            xmlUrl="http://www.bakadesuyo.com/feed/" htmlUrl="https://bakadesuyo.com/"/>
+      <outline text="Michael Huemer" title="Michael Huemer" type="rss" 
+            xmlUrl="https://fakenous.net/?feed=rss2"/>
+      <outline text="ross-douthat" title="ross-douthat" type="rss" 
+            xmlUrl="https://www.nytimes.com/svc/collections/v1/publish/www.nytimes.com/column/ross-douthat/rss.xml" htmlUrl="https://www.nytimes.com/column/ross-douthat"/>
+      <outline text="Ian Visits" title="Ian Visits" type="rss" 
+            xmlUrl="https://www.ianvisits.co.uk/articles/feed/" htmlUrl="https://www.ianvisits.co.uk/articles"/>
+      <outline text="cdixon" title="cdixon" type="rss" 
+            xmlUrl="https://cdixon.org/rss.xml" htmlUrl="https://cdixon.org"/>
+      <outline text="Our World in Data" title="Our World in Data" type="rss" 
+            xmlUrl="http://www.ourworldindata.org/feed/" htmlUrl="https://ourworldindata.org"/>
+      <outline text="Cameron Harwick" title="Cameron Harwick" type="rss" 
+            xmlUrl="https://cameronharwick.com/feed/" htmlUrl="https://cameronharwick.com"/>
+      <outline text="Resolution Foundation" title="Resolution Foundation" type="rss" 
+            xmlUrl="http://www.resolutionfoundation.org/feed/" htmlUrl="https://www.resolutionfoundation.org/"/>
+      <outline text="jonstokes.com" title="jonstokes.com" type="rss" 
+            xmlUrl="https://www.jonstokes.com/feed" htmlUrl="https://www.jonstokes.com"/>
+      <outline text="Robert Wiblin" title="Robert Wiblin" type="rss" 
+            xmlUrl="https://medium.com/feed/@robertwiblin" htmlUrl="https://medium.com/@robertwiblin?source=rss-b6dbcea3cc00------2"/>
+      <outline text="Del Noce " title="Del Noce " type="rss" 
+            xmlUrl="https://delnoceinenglish.org/feed/" htmlUrl="https://delnoceinenglish.org"/>
+      <outline text="Peter Turchin" title="Peter Turchin" type="rss" 
+            xmlUrl="http://peterturchin.com/feed/" htmlUrl="https://peterturchin.com"/>
+      <outline text="The Ambivalent Leftie" title="The Ambivalent Leftie" type="rss" 
+            xmlUrl="https://ambivalentleftie.com/feed/" htmlUrl="https://ambivalentleftie.com"/>
+      <outline text="George Yarrow" title="George Yarrow" type="rss" 
+            xmlUrl="https://gypoliticaleconomy.blog/feed/" htmlUrl="https://gypoliticaleconomy.blog"/>
+      <outline text="Steven Pinker" title="Steven Pinker" type="rss" 
+            xmlUrl="http://stevenpinker.com/feed/" htmlUrl="https://stevenpinker.com/"/>
+      <outline text="Spotted Toad" title="Spottedtoad" type="rss" 
+            xmlUrl="https://spottedtoad.wordpress.com/feed/"/>
+      <outline text="Fred Bauer" title="Fred Bauer" type="rss" 
+            xmlUrl="http://fredbauerblog.blogspot.com/feeds/posts/default" htmlUrl="http://fredbauerblog.blogspot.com/"/>
+      <outline text="Dimitri Halikias" title="Dimitri Halikias" type="rss" 
+            xmlUrl="http://dhalikias.blogspot.com/feeds/posts/default" htmlUrl="http://dhalikias.blogspot.com/"/>
+      <outline text="Chris Dillow" title="Chris Dillow" type="rss" 
+            xmlUrl="https://stumblingandmumbling.typepad.com/stumbling_and_mumbling/index.rdf" htmlUrl="https://stumblingandmumbling.typepad.com/stumbling_and_mumbling/"/>
+      <outline text="Centre for Cities" title="Centre for Cities" type="rss" 
+            xmlUrl="https://morss.it/:items=%7C%7C*[class=c-card__title]/https://www.centreforcities.org/blog/"/>
+      <outline text="City Monitor" title="City Monitor" type="rss" 
+            xmlUrl="https://citymonitor.ai/feed" htmlUrl="https://www.citymonitor.ai/"/>
+      <outline text="Persuasion" title="Persuasion" type="rss" 
+            xmlUrl="https://www.persuasion.community/feed" htmlUrl="https://www.persuasion.community"/>
+      <outline text="Nate Silver – FiveThirtyEight" title="Nate Silver – FiveThirtyEight" type="rss" 
+            xmlUrl="http://fivethirtyeight.com/contributors/nate-silver/feed/" htmlUrl="https://fivethirtyeight.com"/>
+      <outline text="Martin Gurri" title="Martin Gurri" type="rss" 
+            xmlUrl="http://thefifthwave.wordpress.com/feed/" htmlUrl="https://thefifthwave.wordpress.com"/>
+      <outline text="Tim Harford" title="Tim Harford" type="rss" 
+            xmlUrl="https://timharford.com/feed/" htmlUrl="https://timharford.com"/>
+      <outline text="William Davies" title="William Davies" type="rss" 
+            xmlUrl="https://williamdavies.blog/feed/" htmlUrl="https://williamdavies.blog"/>
+      <outline text="Articles – Econlib" title="Articles – Econlib" type="rss" 
+            xmlUrl="https://www.econlib.org/articles/feed/" htmlUrl="https://www.econlib.org/articles/"/>
+      <outline text="Diane Coyle" title="Diane Coyle" type="rss" 
+            xmlUrl="http://www.enlightenmenteconomics.com/blog/index.php/feed/" htmlUrl="http://www.enlightenmenteconomics.com/blog"/>
+      <outline text="James Clear" title="James Clear" type="rss" 
+            xmlUrl="http://jamesclear.com/feed" htmlUrl="https://jamesclear.com/"/>
+      <outline text="Lord Ashcroft Polls" title="Lord Ashcroft Polls" type="rss" 
+            xmlUrl="http://lordashcroftpolls.com/feed/" htmlUrl="https://lordashcroftpolls.com/"/>
+      <outline text="Matt Singh" title="Matt Singh" type="rss" 
+            xmlUrl="http://www.ncpolitics.uk/feed/" htmlUrl="https://www.ncpolitics.uk/"/>
+      <outline text="simpolism" title="simpolism" type="rss" 
+            xmlUrl="https://listed.to/@simpolism/feed"/>
+      <outline text="Notes - oliverscottcurry" title="Notes - oliverscottcurry" type="rss" 
+            xmlUrl="https://www.oliverscottcurry.com/notes?format=rss" htmlUrl="https://www.oliverscottcurry.com/notes/"/>
+      <outline text="Chris Hanretty " title="Chris Hanretty " type="rss" 
+            xmlUrl="https://medium.com/feed/@chrishanretty" htmlUrl="https://medium.com/@chrishanretty?source=rss-1873a9931036------2"/>
+      <outline text="Shylock Holmes" title="Shylock Holmes" type="rss" 
+            xmlUrl="http://shylockholmes.blogspot.com/feeds/posts/default" htmlUrl="http://shylockholmes.blogspot.com/"/>
+      <outline text="Richard Brown" title="Richard Brown" type="rss" 
+            xmlUrl="https://richardfjbrown.co.uk/feed/" htmlUrl="https://richardfjbrown.co.uk"/>
+      <outline text="David Smith" title="David Smith" type="rss" 
+            xmlUrl="http://www.economicsuk.com/blog/index.rdf" entryContent="3"/>
+      <outline text="Paul Krugman" title="Paul Krugman" type="rss" 
+            xmlUrl="https://www.nytimes.com/svc/collections/v1/publish/www.nytimes.com/column/paul-krugman/rss.xml" htmlUrl="https://www.nytimes.com/column/paul-krugman"/>
+      <outline text="The Northern Agenda" title="The Northern Agenda" type="rss" 
+            xmlUrl="https://kill-the-newsletter.com/feeds/ubzn40ki5nzbnjdy.xml"/>
+      <outline text="Rob Henderson" title="Rob Henderson" type="rss" 
+            xmlUrl="https://kill-the-newsletter.com/feeds/v3in7x97dxfa0ig7.xml"/>
+      <outline text="Geoffrey Miller" title="Geoffrey Miller" type="rss" 
+            xmlUrl="https://kill-the-newsletter.com/feeds/6l4n65s8loarm7bw.xml"/>
+      <outline text="Tanner Greer " title="Tanner Greer " type="rss" 
+            xmlUrl="http://scholars-stage.blogspot.com/feeds/posts/default" htmlUrl="https://scholars-stage.org"/>
+      <outline text="John cochrane" title="John cochrane" type="rss" 
+            xmlUrl="https://johnhcochrane.blogspot.com/feeds/posts/default?alt=rss" htmlUrl="https://johnhcochrane.blogspot.com/"/>
+      <outline text="policyskeptic" title="policyskeptic" type="rss" 
+            xmlUrl="https://policyskeptic.blogspot.com/feeds/posts/default?alt=rss" htmlUrl="https://policyskeptic.blogspot.com/"/>
+      <outline text="benkuhn.net" title="benkuhn.net" type="rss" 
+            xmlUrl="https://www.benkuhn.net/index.xml" htmlUrl="https://www.benkuhn.net/"/>
+      <outline text="Every " title="Every " type="rss" 
+            xmlUrl="https://every.to/feeds/56f1c322bdca260f7823.xml" htmlUrl="https://every.to/feeds/56f1c322bdca260f7823"/>
+      <outline text="Just the social facts, ma&#39;am" title="Just the social facts, ma&#39;am" type="rss" 
+            xmlUrl="https://justthesocialfacts.blogspot.com/feeds/posts/default?alt=rss" htmlUrl="https://justthesocialfacts.blogspot.com/"/>
+      <outline text="Pedestrian Observations" title="Pedestrian Observations" type="rss" 
+            xmlUrl="https://pedestrianobservations.com/feed/" htmlUrl="https://pedestrianobservations.com"/>
+      <outline text="Matt Lakeman" title="Matt Lakeman" type="rss" 
+            xmlUrl="https://mattlakeman.org/feed/" htmlUrl="https://mattlakeman.org"/>
+      <outline text="Date Psychology" title="Date Psychology" type="rss" 
+            xmlUrl="https://datepsychology.com/feed/"/>
+      <outline text="Epsilon Theory" title="Epsilon Theory" type="rss" 
+            xmlUrl="https://www.epsilontheory.com/feed/" htmlUrl="https://www.epsilontheory.com/"/>
+      <outline text="DYNOMIGHT" title="DYNOMIGHT" type="rss" 
+            xmlUrl="https://dynomight.net/feed.xml" htmlUrl="https://dynomight.net/"/>
+      <outline text="Electoral Calculus" title="Electoral Calculus" type="rss" 
+            xmlUrl="https://www.electoralcalculus.co.uk/rssfeed.rss" htmlUrl="https://www.electoralcalculus.co.uk"/>
+      <outline text="LDN CALENDAR" title="LDN CALENDAR" type="rss" 
+            xmlUrl="https://ldncalendar.substack.com/feed" htmlUrl="https://ldncalendar.substack.com"/>
+      <outline text="LessWrong" title="LessWrong" type="rss" 
+            xmlUrl="https://www.lesswrong.com/feed.xml" htmlUrl="https://www.lesswrong.com"/>
+      <outline text="DiBeos" title="DiBeos" type="rss" 
+            xmlUrl="https://dibeos.net/feed/" htmlUrl="https://dibeos.com"/>
+      <outline text="Human Invariant" title="Human Invariant" type="rss" 
+            xmlUrl="https://www.humaninvariant.com/rss" htmlUrl="https://humaninvariant.com"/>
+      <outline text="Mark Pitblado" title="Mark Pitblado" type="rss" 
+            xmlUrl="https://www.markpitblado.me/feed.xml" htmlUrl="https://www.markpitblado.me/"/>
+      <outline text="Energy Matters" title="Energy Matters" type="rss" 
+            xmlUrl="https://euanmearns.com/feed/" htmlUrl="https://euanmearns.com"/>
+      <outline text="Engelsberg ideas" title="Engelsberg ideas" type="rss" 
+            xmlUrl="https://engelsbergideas.com//feed" htmlUrl="https://engelsbergideas.com/"/>
+  </outline>
+  <outline title="Economics" text="Economics">
+      <outline text="Econlib" title="Econlib" type="rss" 
+            xmlUrl="http://www.econlib.org/index.xml" htmlUrl="https://www.econlib.org/"/>
+  </outline>
+  <outline title="Excel" text="Excel">
+      <outline text="Excel Access" title="Excel Access" type="rss" 
+            xmlUrl="https://excelaccessws.blogspot.com/feeds/posts/default" htmlUrl="https://excelaccessws.blogspot.com/"/>
+      <outline text="Excel Strategies, LLC" title="Excel Strategies, LLC" type="rss" 
+            xmlUrl="https://blog.excelstrategiesllc.com/feed/" htmlUrl="https://blog.excelstrategiesllc.com"/>
+      <outline text="ATA Learning" title="ATA Learning" type="rss" 
+            xmlUrl="https://adamtheautomator.com//feed" htmlUrl="https://adamtheautomator.com"/>
+      <outline text="The Lonely Administrator" title="The Lonely Administrator" type="rss" 
+            xmlUrl="https://jdhitsolutions.com/blog/feed/" htmlUrl="https://jdhitsolutions.com/blog/"/>
+      <outline text="Jeff Brown Tech" title="Jeff Brown Tech" type="rss" 
+            xmlUrl="https://jeffbrown.tech//feed" htmlUrl="https://jeffbrown.tech/"/>
+      <outline text="Double Excel" title="Double Excel" type="rss" 
+            xmlUrl="https://www.doubleexcel.com/blog-feed.xml"/>
+      <outline text="CodersLegacy" title="CodersLegacy" type="rss" 
+            xmlUrl="https://coderslegacy.com//feed" htmlUrl="https://coderslegacy.com/"/>
+      <outline text="tom augspurger" title="tom augspurger" type="rss" 
+            xmlUrl="https://tomaugspurger.github.io/index.xml" htmlUrl="https://tomaugspurger.net/"/>
+      <outline text="Aidan Cooper&#39;s Blog" title="Aidan Cooper&#39;s Blog" type="rss" 
+            xmlUrl="https://www.aidancooper.co.uk/rss/" htmlUrl="https://www.aidancooper.co.uk/"/>
+      <outline text="Tutorials – ATA Learning" title="Tutorials – ATA Learning" type="rss" 
+            xmlUrl="https://adamtheautomator.com/tutorials//feed" htmlUrl="https://adamtheautomator.com"/>
+      <outline text="Codelivly" title="Codelivly" type="rss" 
+            xmlUrl="https://www.codelivly.com/feed/" htmlUrl="https://codelivly.com/"/>
+      <outline text="Valentino Gagliardi " title="Valentino Gagliardi " type="rss" 
+            xmlUrl="https://www.valentinog.com/blog/rss.xml"/>
+      <outline text="latest projects - mitxela.com" title="latest projects - mitxela.com" type="rss" 
+            xmlUrl="http://mitxela.com/feed" htmlUrl="https://mitxela.com/projects"/>
+      <outline text="Software Engineer World – Welcome To SWE World" title="Software Engineer World – Welcome To SWE World" type="rss" 
+            xmlUrl="https://sweworld.net/index.xml" htmlUrl="https://sweworld.net/"/>
+      <outline text="freeCodeCamp.org         " title="freeCodeCamp.org         " type="rss" 
+            xmlUrl="https://www.freecodecamp.org/news/rss/" htmlUrl="https://www.freecodecamp.org/news/"/>
+      <outline text="KDnuggets" title="KDnuggets" type="rss" 
+            xmlUrl="https://www.kdnuggets.com/feed/" htmlUrl="https://www.kdnuggets.com"/>
+      <outline text="Martin Heinz&#39;s Blog" title="Martin Heinz&#39;s Blog" type="rss" 
+            xmlUrl="https://martinheinz.dev/rss/" htmlUrl="https://martinheinz.dev/rss"/>
+      <outline text="Flemming&#39;s Blog" title="Flemming&#39;s Blog" type="rss" 
+            xmlUrl="https://flemmingss.com/feed/" htmlUrl="https://flemmingss.com/"/>
+      <outline text="Tall, Snarky Canadian" title="Tall, Snarky Canadian" type="rss" 
+            xmlUrl="https://snarky.ca/rss/" htmlUrl="https://snarky.ca/"/>
+      <outline text="Bamboo Weekly" title="Bamboo Weekly" type="rss" 
+            xmlUrl="https://www.bambooweekly.com/feed" htmlUrl="https://www.bambooweekly.com/"/>
+      <outline text="fasterthanli.me" title="fasterthanli.me" type="rss" 
+            xmlUrl="https://fasterthanli.me/index.xml"/>
+      <outline text="Matthew Hodgkins Blog" title="Matthew Hodgkins Blog" type="rss" 
+            xmlUrl="https://hodgkins.io/feed.xml" htmlUrl="https://hodgkins.io/"/>
+      <outline text="CodeProject Latest Articles" title="CodeProject Latest Articles" type="rss" 
+            xmlUrl="https://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=1" htmlUrl="https://www.codeproject.com"/>
+      <outline text="Duarte O.Carmo" title="Duarte O.Carmo" type="rss" 
+            xmlUrl="https://duarteocarmo.com/feed.xml" htmlUrl="https://duarteocarmo.com/"/>
+      <outline text="Guerrilla  Teck" title="Guerrilla  Teck" type="rss" 
+            xmlUrl="https://www.guerillateck.com/feeds/posts/default"/>
+      <outline text="Stack Abuse" title="Stack Abuse" type="rss" 
+            xmlUrl="https://stackabuse.com/rss/" htmlUrl="https://stackabuse.com/"/>
+      <outline text="@ReadMultiplex" title="@ReadMultiplex" type="rss" 
+            xmlUrl="https://readmultiplex.com/feed/" htmlUrl="https://readmultiplex.com"/>
+      <outline text="Warp.dev" title="Warp.dev" type="rss" 
+            xmlUrl="https://www.warp.dev/blog/rss.xml" htmlUrl="https://www.warp.dev"/>
+      <outline text="Nobody has time for Python" title="Nobody has time for Python" type="rss" 
+            xmlUrl="https://bitecode.substack.com/feed" htmlUrl="https://www.bitecode.dev"/>
+      <outline text="Daniel Builescu - Python &#38; Shopify Expert - Learn Python" title="Daniel Builescu - Python &#38; Shopify Expert - Learn Python" type="rss" 
+            xmlUrl="https://danielbuilescu.com/blogs/learn-python.atom"/>
+      <outline text="Anurag Verma" title="Anurag Verma" type="rss" 
+            xmlUrl="https://www.anurag629.club/rss.xml"/>
+      <outline text="VidaVolta" title="VidaVolta" type="rss" 
+            xmlUrl="https://www.vidavolta.io/rss/"/>
+      <outline text="GeekPython" title="GeekPython" type="rss" 
+            xmlUrl="https://geekpython.in/rss.xml"/>
+      <outline text="flask blog" title="flask blog" type="rss" 
+            xmlUrl="https://blog.miguelgrinberg.com/feed" htmlUrl="https://blog.miguelgrinberg.com/feed"/>
+      <outline text="Confessions of a Code Addict" title="Confessions of a Code Addict" type="rss" 
+            xmlUrl="https://codeconfessions.substack.com/feed" htmlUrl="https://blog.codingconfessions.com"/>
+      <outline text="Kens Learning Curve" title="Kens Learning Curve" type="rss" 
+            xmlUrl="https://kenslearningcurve.com/feed/" htmlUrl="https://kenslearningcurve.com"/>
+      <outline text="Ten thousand meters" title="Ten thousand meters" type="rss" 
+            xmlUrl="https://tenthousandmeters.com/feeds/all.atom.xml" htmlUrl="https://tenthousandmeters.com/"/>
+      <outline text="Julian&#39;s Blog" title="Julian&#39;s Blog" type="rss" 
+            xmlUrl="https://blog.ewers-peters.de/rss.xml" htmlUrl="https://blog.ewers-peters.de"/>
+      <outline text="Netcode-Hub" title="Netcode-Hub" type="rss" 
+            xmlUrl="https://netcodehub.blogspot.com/feeds/posts/default?alt=rss" htmlUrl="https://netcodehub.blogspot.com/"/>
+      <outline text="Andrew Lock | .NET Escapades" title="Andrew Lock | .NET Escapades" type="rss" 
+            xmlUrl="https://andrewlock.net/rss.xml" htmlUrl="https://andrewlock.net/"/>
+      <outline text="Chris’s Tech ADHD" title="Chris’s Tech ADHD" type="rss" 
+            xmlUrl="https://chris-ayers.com/feed.xml" htmlUrl="https://chris-ayers.com/"/>
+      <outline text="ByteInTheSky on" title="ByteInTheSky on" type="rss" 
+            xmlUrl="https://www.byteinthesky.com/index.xml" htmlUrl="https://www.byteinthesky.com/"/>
+      <outline text="ArjanCodes Blog" title="ArjanCodes Blog" type="rss" 
+            xmlUrl="https://www.arjancodes.com/blog.rss"/>
+      <outline text="Code4IT" title="Code4IT" type="rss" 
+            xmlUrl="https://www.code4it.dev/index.xml" htmlUrl="https://www.code4it.dev/"/>
+      <outline text="minidump.net" title="minidump.net" type="rss" 
+            xmlUrl="https://minidump.net/index.xml" htmlUrl="https://minidump.net/"/>
+      <outline text="HAMED SALAMEH" title="HAMED SALAMEH" type="rss" 
+            xmlUrl="https://hamedsalameh.com/feed/" htmlUrl="https://hamedsalameh.com"/>
+      <outline text="pyter" title="pyter" type="rss" 
+            xmlUrl="https://pyter.at/atom.xml" htmlUrl="https://pyter.at/blog/"/>
+      <outline text="Matt Lacey" title="Matt Lacey" type="rss" 
+            xmlUrl="https://www.mrlacey.com/feeds/posts/default?alt=rss" htmlUrl="https://www.mrlacey.com/"/>
+      <outline text="Meziantou&#39;s blog" title="Meziantou&#39;s blog" type="rss" 
+            xmlUrl="https://www.meziantou.net/feed.rss" htmlUrl="https://www.meziantou.net/?utm_medium=social&amp;utm_source=syndication"/>
+      <outline text="jonhilton.net - Making sense of .NET" title="jonhilton.net - Making sense of .NET" type="rss" 
+            xmlUrl="https://jonhilton.net//feed"/>
+      <outline text="Telerik Blogs" title="Telerik Blogs" type="rss" 
+            xmlUrl="https://feeds.telerik.com/blogs" htmlUrl="https://www.telerik.com/"/>
+      <outline text="code-corner.dev" title="code-corner.dev" type="rss" 
+            xmlUrl="https://code-corner.dev/atom.xml"/>
+      <outline text="codewithmukesh" title="codewithmukesh" type="rss" 
+            xmlUrl="https://codewithmukesh.com/rss.xml" htmlUrl="https://codewithmukesh.com/"/>
+      <outline text="NullByte Tech Journals" title="NullByte Tech Journals" type="rss" 
+            xmlUrl="https://nullbyte.hashnode.dev/rss.xml" htmlUrl="https://nullbyte.hashnode.dev"/>
+      <outline text="The Code Painter Blog" title="The Code Painter Blog" type="rss" 
+            xmlUrl="https://www.thecodepainter.co.uk/feed.rss" htmlUrl="https://www.thecodepainter.co.uk/blog/"/>
+      <outline text="maui blazor" title="maui blazor" type="rss" 
+            xmlUrl="https://egvijayanand.in/feed/" htmlUrl="https://egvijayanand.in"/>
+      <outline text="AskXammy" title="AskXammy" type="rss" 
+            xmlUrl="https://askxammy.com/feed/" htmlUrl="https://askxammy.com"/>
+      <outline text="UbuntuMint – Everything About Ubuntu Linux" title="UbuntuMint – Everything About Ubuntu Linux" type="rss" 
+            xmlUrl="https://www.ubuntumint.com/feed/" htmlUrl="https://www.ubuntumint.com"/>
+      <outline text="albyrock87.codes" title="albyrock87.codes" type="rss" 
+            xmlUrl="https://albyrock87.hashnode.dev/rss.xml" htmlUrl="https://albyrock87.hashnode.dev"/>
+      <outline text="@jonchun" title="@jonchun" type="rss" 
+            xmlUrl="https://jonchun.github.io/feed_rss_created.xml" htmlUrl="https://blog.jonathanchun.com/"/>
+      <outline text="Laurent Kempé" title="Laurent Kempé" type="rss" 
+            xmlUrl="https://laurentkempe.com/atom.xml"/>
+      <outline text="My Online Training Hub" title="My Online Training Hub" type="rss" 
+            xmlUrl="https://www.myonlinetraininghub.com/feed" htmlUrl="https://www.myonlinetraininghub.com/"/>
+      <outline text="Dan Clarke&#39;s Blog" title="Dan Clarke&#39;s Blog" type="rss" 
+            xmlUrl="https://www.danclarke.com/rss"/>
+      <outline text="Blazor Help Website" title="Blazor Help Website" type="rss" 
+            xmlUrl="https://blazorhelpwebsite.com/api/RSSFeed/Rss" htmlUrl="https://blazorhelpwebsite.com/"/>
+      <outline text="Improve &#38;amp; Repeat" title="Improve &#38;amp; Repeat" type="rss" 
+            xmlUrl="https://improveandrepeat.com/feed_rss_created.xml" htmlUrl="https://ImproveAndRepeat.com/"/>
+      <outline text="samwho.dev" title="samwho.dev" type="rss" 
+            xmlUrl="https://samwho.dev/rss.xml"/>
+      <outline text="Simon Willison&#39;s Weblog" title="Simon Willison&#39;s Weblog" type="rss" 
+            xmlUrl="https://simonwillison.net/atom/everything/" htmlUrl="http://simonwillison.net/"/>
+      <outline text="datapythonista blog" title="datapythonista blog" type="rss" 
+            xmlUrl="https://datapythonista.me/blog/feeds/all.atom.xml" htmlUrl="/blog/"/>
+      <outline text="MJ Rathbun Blog" title="MJ Rathbun Blog" type="rss" 
+            xmlUrl="https://crabby-rathbun.github.io/mjrathbun-website/blog.xml" htmlUrl="https://crabby-rathbun.github.io/mjrathbun-website/blog.html"/>
+  </outline>
+  <outline title="News" text="News">
+      <outline text="FT World" title="FT World" type="rss" 
+            xmlUrl="http://www.ft.com/rss/world" htmlUrl="https://www.ft.com/stream/82645c31-4426-4ef5-99c9-9df6e0940c00"/>
+      <outline text="FT UK homepage" title="FT UK homepage" type="rss" 
+            xmlUrl="http://www.ft.com/rss/home/uk" htmlUrl="https://www.ft.com"/>
+      <outline text="Bloomberg" title="Bloomberg" type="rss" 
+            xmlUrl="https://news.google.com/rss/search?hl=en-GB&amp;gl=GB&amp;ceid=GB%3Aen&amp;oc=11&amp;q=%22The%20opinions%20expressed%20are%22%20source%3Abloomberg" htmlUrl="https://news.google.com/search?hl=en-GB&amp;gl=GB&amp;ceid=GB:en&amp;oc=11&amp;q=%22The+opinions+expressed+are%22+source:bloomberg"/>
+  </outline>
+  <outline title="Photography" text="Photography">
+      <outline text="Words &#38; Pictures" title="Words &#38; Pictures" type="rss" 
+            xmlUrl="https://jayjayjjetplanewordsandpictures.photo.blog/feed/" htmlUrl="https://jayjayjjetplanewordsandpictures.photo.blog"/>
+      <outline text="Fuji Rumors" title="Fuji Rumors" type="rss" 
+            xmlUrl="http://www.fujirumors.com/category/rumors/feed/" htmlUrl="https://www.fujirumors.com/category/rumors/"/>
+      <outline text="Pentax Rumors" title="Pentax Rumors" type="rss" 
+            xmlUrl="http://pentaxrumors.com/feed/" htmlUrl="https://pentaxrumors.com/"/>
+      <outline text="Canon Rumors" title="Canon Rumors" type="rss" 
+            xmlUrl="http://feeds.feedburner.com/canonrumors/rss" htmlUrl="https://www.canonrumors.com/"/>
+      <outline text="Lighting Rumours" title="Lighting Rumours" type="rss" 
+            xmlUrl="https://feeds.feedburner.com/LightingRumours" htmlUrl="https://www.lightingrumours.com/"/>
+  </outline>
+  <outline title="Psychology" text="Psychology">
+      <outline text="Hidden Brain " title="Hidden Brain " type="rss" 
+            xmlUrl="https://feeds.simplecast.com/kwWc0lhf" htmlUrl="https://www.siriusxm.com"/>
+      <outline text="Farnam Street" title="Farnam Street" type="rss" 
+            xmlUrl="http://feeds.feedburner.com/68131" htmlUrl="https://fs.blog/"/>
+      <outline text="PsyPost" title="PsyPost" type="rss" 
+            xmlUrl="http://www.psypost.org/feed" htmlUrl="https://www.psypost.org/"/>
+      <outline text="Behavioral Scientist" title="Behavioral Scientist" type="rss" 
+            xmlUrl="http://behavioralscientist.org/feed/" htmlUrl="https://behavioralscientist.org/"/>
+      <outline text="Psyche | on the human condition" title="Psyche | on the human condition" type="rss" 
+            xmlUrl="https://psyche.co/feed" htmlUrl="https://psyche.co"/>
+      <outline text="Stories Archive - Neuroscience News" title="Neuroscience News" type="rss" 
+            xmlUrl="https://neurosciencenews.com/web-stories/feed/" htmlUrl="https://neurosciencenews.com/web-stories/"/>
+      <outline text="Rational Psychiatry" title="Rational Psychiatry" type="rss" 
+            xmlUrl="https://rationalpsychiatry.substack.com/feed" htmlUrl="https://rationalpsychiatry.substack.com"/>
+      <outline text="Extra Focus" title="Extra Focus" type="rss" 
+            xmlUrl="https://kill-the-newsletter.com/feeds/vdgmb8b1g84etkhe.xml"/>
+      <outline text="Hesham Mashhour" title="Hesham Mashhour" type="rss" 
+            xmlUrl="https://neurontheory.substack.com/feed"/>
+      <outline text="BPS Research Digest" title="BPS Research Digest" type="rss" 
+            xmlUrl="http://bps-research-digest.blogspot.com/feeds/posts/default"/>
+      <outline text="ADDitude" title="ADDitude" type="rss" 
+            xmlUrl="https://www.additudemag.com/feed/" htmlUrl="https://www.additudemag.com"/>
+      <outline text="Psychiatrist.com" title="Psychiatrist.com" type="rss" 
+            xmlUrl="https://www.psychiatrist.com/feed/" htmlUrl="https://www.psychiatrist.com/"/>
+  </outline>
+  <outline title="Tech" text="Tech">
+      <outline text="The Register" title="The Register" type="rss" 
+            xmlUrl="http://www.theregister.co.uk/excerpts.rss" htmlUrl="https://www.theregister.com/"/>
+      <outline text="Slashdot" title="Slashdot" type="rss" 
+            xmlUrl="http://rss.slashdot.org/Slashdot/slashdot" htmlUrl="https://slashdot.org/"/>
+      <outline text="Tom&#39;s Hardware" title="Tom&#39;s Hardware" type="rss" 
+            xmlUrl="https://www.tomshardware.com/feeds/all" htmlUrl="https://www.tomshardware.com/feeds.xml"/>
+      <outline text="Guru3D.com" title="Guru3D.com" type="rss" 
+            xmlUrl="http://www.guru3d.com/news_rss" htmlUrl="https://www.guru3d.com"/>
+      <outline text="Benedict Evans" title="Benedict Evans" type="rss" 
+            xmlUrl="https://kill-the-newsletter.com/feeds/aa9utukapre8xmkh.xml"/>
+      <outline text="Future" title="Future" type="rss" 
+            xmlUrl="https://future.a16z.com/feed/" htmlUrl="https://future.com/"/>
+      <outline text="Manu Feed" title="Manu Feed" type="rss" 
+            xmlUrl="http://manuelmoreale.com/feed" htmlUrl="https://manuelmoreale.com"/>
+      <outline text="brian lovin" title="brian lovin" type="rss" 
+            xmlUrl="https://brianlovin.com/writing/rss" htmlUrl="https://brianlovin.com/writing"/>
+      <outline text="julian.digital" title="julian.digital" type="rss" 
+            xmlUrl="http://www.julian.digital/feed" htmlUrl="https://julian.digital"/>
+      <outline text="SemiAnalysis" title="SemiAnalysis" type="rss" 
+            xmlUrl="https://semianalysis.com/feed/" htmlUrl="https://semianalysis.com"/>
+  </outline>
+  <outline title="Markets" text="Markets">
+      <outline text="The Long View" title="The Long View" type="rss" 
+            xmlUrl="https://www.moneyisfiction.com/blog?format=rss" htmlUrl="https://www.moneyisfiction.com/blog/"/>
+      <outline text="Raconteur" title="Raconteur" type="rss" 
+            xmlUrl="https://www.raconteur.net/feed/" htmlUrl="https://www.raconteur.net/"/>
+      <outline text="Blog - Compound Advisors" title="Blog - Compound Advisors" type="rss" 
+            xmlUrl="https://compoundadvisors.com/blog/feed"/>
+      <outline text="            Morning Brew        " title="            Morning Brew        " type="rss" 
+            xmlUrl="https://www.morningbrew.com/feed"/>
+      <outline text="Bill Blain" title="Bill Blain" type="rss" 
+            xmlUrl="https://morningporridge.com/feed/" htmlUrl="https://morningporridge.com"/>
+      <outline text="I-System TrendCompass" title="I-System TrendCompass" type="rss" 
+            xmlUrl="https://trendcompass.substack.com/feed" htmlUrl="https://trendcompass.substack.com"/>
+  </outline>
+  <outline title="Music" text="Music">
+      <outline text="For The Rabbits" title="For The Rabbits" type="rss" 
+            xmlUrl="https://fortherabbits.net/feed/" htmlUrl="https://fortherabbits.net"/>
+      <outline text="The Needle Drop" title="The Needle Drop" type="rss" 
+            xmlUrl="https://theneedledrop.com/rss/" htmlUrl="https://theneedledrop.com/"/>
+      <outline text="So Young Magazine" title="So Young Magazine" type="rss" 
+            xmlUrl="https://soyoungmagazine.com/feed/" htmlUrl="https://soyoungmagazine.com/"/>
+      <outline text="Loud And Quiet" title="Loud And Quiet" type="rss" 
+            xmlUrl="https://www.loudandquiet.com/feed/" htmlUrl="https://www.loudandquiet.com/"/>
+  </outline>
+</body>
+</opml>
