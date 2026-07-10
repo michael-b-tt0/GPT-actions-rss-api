@@ -3,6 +3,7 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Threading;
+using System.ComponentModel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace RSS_API.Controllers;
@@ -35,11 +36,28 @@ public sealed class SubstackController : ControllerBase
         _logger = logger;
     }
 
+    /// <summary>
+    /// Returns Substack posts published on the requested day from the Substack feeds listed in the OPML file.
+    /// </summary>
+    /// <param name="date">Optional date in yyyy-MM-dd format. Defaults to today in the selected time zone.</param>
+    /// <param name="timeZone">Time zone used to decide which posts count as belonging to the requested day.</param>
+    /// <param name="maxConcurrency">Maximum number of feed downloads allowed to run at the same time.</param>
+    /// <param name="requestSpacingMs">Minimum delay in milliseconds between starting outbound Substack feed requests.</param>
+    /// <param name="cancellationToken">Cancellation token for the request.</param>
+    /// <returns>A response containing the matching posts and any per-feed fetch errors.</returns>
     [HttpGet("today", Name = "GetTodaysSubstackPosts")]
+    [EndpointSummary("Get daily Substack posts")]
+    [EndpointDescription("Fetches the Substack feeds from the OPML subscription list and returns only the posts published on the requested day.")]
+    [ProducesResponseType(typeof(SubstackDailyResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<SubstackDailyResponse>> GetToday(
+        [Description("Optional date in yyyy-MM-dd format. Defaults to today in the selected time zone.")]
         [FromQuery] string? date = null,
+        [Description("Time zone used to decide which posts count as belonging to the requested day.")]
         [FromQuery] string? timeZone = "Europe/London",
+        [Description("Maximum number of feed downloads allowed to run at the same time.")]
         [FromQuery] int maxConcurrency = 2,
+        [Description("Minimum delay in milliseconds between starting outbound Substack feed requests.")]
         [FromQuery] int requestSpacingMs = 1250,
         CancellationToken cancellationToken = default)
     {
@@ -278,22 +296,51 @@ public sealed class SubstackController : ControllerBase
     private sealed record SubstackFeed(string Title, string FeedUrl, string? SiteUrl);
 }
 
+/// <summary>
+/// Result payload for the daily Substack feed query.
+/// </summary>
 public sealed record SubstackDailyResponse(
+    [property: Description("The requested calendar date used to filter matching posts.")]
     DateOnly Date,
+    [property: Description("The time zone used when deciding which posts belong to the requested date.")]
     string TimeZone,
+    [property: Description("Total number of Substack feeds inspected from the OPML file.")]
     int FeedCount,
+    [property: Description("Number of posts published on the requested date.")]
     int PostCount,
+    [property: Description("Posts published on the requested date.")]
     IReadOnlyList<SubstackPost> Posts,
+    [property: Description("Per-feed errors for feeds that could not be fetched or parsed.")]
     IReadOnlyList<FeedError> Errors);
 
+/// <summary>
+/// Normalized representation of a Substack post returned from an RSS or Atom feed.
+/// </summary>
 public sealed record SubstackPost(
+    [property: Description("Display title of the Substack feed that produced the post.")]
     string FeedTitle,
+    [property: Description("RSS or Atom feed URL that produced the post.")]
     string FeedUrl,
+    [property: Description("Primary website URL for the Substack publication, when available from the OPML file.")]
     string? SiteUrl,
+    [property: Description("Post title from the feed item.")]
     string Title,
+    [property: Description("Canonical post URL, when present in the feed item.")]
     string? Url,
+    [property: Description("Author name from the feed item, when available.")]
     string? Author,
+    [property: Description("Publication timestamp parsed from the feed item.")]
     DateTimeOffset? PublishedAt,
+    [property: Description("Plain-text version of the feed content, suitable for summarization.")]
     string? ContentText);
 
-public sealed record FeedError(string FeedTitle, string FeedUrl, string Message);
+/// <summary>
+/// Error details for a feed that could not be fetched or parsed.
+/// </summary>
+public sealed record FeedError(
+    [property: Description("Display title of the Substack feed that failed.")]
+    string FeedTitle,
+    [property: Description("Feed URL that failed.")]
+    string FeedUrl,
+    [property: Description("Error message captured while fetching or parsing the feed.")]
+    string Message);
