@@ -1,4 +1,5 @@
 @RSS_API_HostAddress = http://localhost:5270
+@SubstackApiKey = replace-with-your-api-key
 
 GET {{RSS_API_HostAddress}}/weatherforecast/
 Accept: application/json
@@ -7,10 +8,12 @@ Accept: application/json
 
 GET {{RSS_API_HostAddress}}/substack/today
 Accept: application/json
+X-API-Key: {{SubstackApiKey}}
 
 ###
 
 GET {{RSS_API_HostAddress}}/substack/today?date=2026-07-09&timeZone=Europe/London
 Accept: application/json
+X-API-Key: {{SubstackApiKey}}
 
 ###
