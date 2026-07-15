@@ -3,6 +3,7 @@ using RSS_API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -29,5 +30,5 @@ app.UseMiddleware<SubstackApiKeyMiddleware>();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.MapGet("/health", () => Results.Ok("OK"));
 app.Run();
