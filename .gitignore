@@ -2,6 +2,7 @@
 /.vs
 /appsettings.Development.json
 /appsettings.json
+/data/substack-cache.json
 /bin
 /obj
 /Properties

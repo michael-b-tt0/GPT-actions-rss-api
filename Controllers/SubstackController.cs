@@ -5,6 +5,7 @@ using System.Xml.Linq;
 using System.Threading;
 using System.ComponentModel;
 using Microsoft.AspNetCore.Mvc;
+using RSS_API.Services;
 
 namespace RSS_API.Controllers;
 
@@ -25,32 +26,26 @@ public sealed class SubstackController : ControllerBase
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly IWebHostEnvironment _environment;
     private readonly ILogger<SubstackController> _logger;
+    private readonly SubstackCacheStore _cacheStore;
 
     public SubstackController(
         IHttpClientFactory httpClientFactory,
         IWebHostEnvironment environment,
-        ILogger<SubstackController> logger)
+        ILogger<SubstackController> logger,
+        SubstackCacheStore cacheStore)
     {
         _httpClientFactory = httpClientFactory;
         _environment = environment;
         _logger = logger;
+        _cacheStore = cacheStore;
     }
 
-    /// <summary>
-    /// Returns Substack posts published on the requested day from the Substack feeds listed in the OPML file.
-    /// </summary>
-    /// <param name="date">Optional date in yyyy-MM-dd format. Defaults to today in the selected time zone.</param>
-    /// <param name="timeZone">Time zone used to decide which posts count as belonging to the requested day.</param>
-    /// <param name="maxConcurrency">Maximum number of feed downloads allowed to run at the same time.</param>
-    /// <param name="requestSpacingMs">Minimum delay in milliseconds between starting outbound Substack feed requests.</param>
-    /// <param name="cancellationToken">Cancellation token for the request.</param>
-    /// <returns>A response containing the matching posts and any per-feed fetch errors.</returns>
-    [HttpGet("today", Name = "GetTodaysSubstackPosts")]
-    [EndpointSummary("Get daily Substack posts")]
-    [EndpointDescription("Fetches the Substack feeds from the OPML subscription list and returns only the posts published on the requested day.")]
+    [HttpPost("refresh", Name = "RefreshSubstackPosts")]
+    [EndpointSummary("Refresh daily Substack posts")]
+    [EndpointDescription("Fetches Substack feeds from the OPML subscription list and saves the results to the local cache.")]
     [ProducesResponseType(typeof(SubstackDailyResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<SubstackDailyResponse>> GetToday(
+    public async Task<ActionResult<SubstackDailyResponse>> Refresh(
         [Description("Optional date in yyyy-MM-dd format. Defaults to today in the selected time zone.")]
         [FromQuery] string? date = null,
         [Description("Time zone used to decide which posts count as belonging to the requested day.")]
@@ -78,30 +73,65 @@ public sealed class SubstackController : ControllerBase
             return BadRequest("Use requestSpacingMs between 0 and 10000.");
         }
 
+        var cache = await _cacheStore.RefreshAsync(
+            token => FetchDailyPostsAsync(targetDate.Value, zone, maxConcurrency, requestSpacingMs, token),
+            cancellationToken);
+
+        return Ok(cache.Response);
+    }
+
+    [HttpGet("today", Name = "GetTodaysSubstackPosts")]
+    [EndpointSummary("Get cached daily Substack posts")]
+    [EndpointDescription("Returns the most recently refreshed Substack results without downloading feeds.")]
+    [ProducesResponseType(typeof(SubstackDailyResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
+    public ActionResult<SubstackDailyResponse> GetToday()
+    {
+        var cache = _cacheStore.Get();
+        return cache is null
+            ? NotFound("No cached Substack results are available. Call POST /substack/refresh first.")
+            : Ok(cache.Response);
+    }
+
+    [HttpGet("status", Name = "GetSubstackStatus")]
+    [EndpointSummary("Get Substack cache status")]
+    [ProducesResponseType(typeof(SubstackRefreshStatus), StatusCodes.Status200OK)]
+    public ActionResult<SubstackRefreshStatus> GetStatus()
+    {
+        var cache = _cacheStore.Get();
+        if (cache is null)
+        {
+            return Ok(new SubstackRefreshStatus(null, 0, 0, 0, "missing"));
+        }
+
+        var zone = ResolveTimeZone(cache.Response.TimeZone);
+        var today = DateOnly.FromDateTime(TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow, zone).DateTime);
+        var status = cache.Response.Date == today ? "fresh" : "stale";
+        return Ok(new SubstackRefreshStatus(
+            cache.RefreshedAt,
+            cache.Response.FeedCount,
+            cache.Response.PostCount,
+            cache.Response.Errors.Count,
+            status));
+    }
+
+    private async Task<SubstackDailyResponse> FetchDailyPostsAsync(
+        DateOnly targetDate,
+        TimeZoneInfo zone,
+        int maxConcurrency,
+        int requestSpacingMs,
+        CancellationToken cancellationToken)
+    {
         var feeds = LoadSubstackFeeds();
         var client = _httpClientFactory.CreateClient();
         client.DefaultRequestHeaders.UserAgent.ParseAdd("RSS-API/1.0 (+daily-substack-summary)");
-        client.Timeout = TimeSpan.FromSeconds(30);
+        client.Timeout = TimeSpan.FromSeconds(45);
 
-        var feedResults = await FetchFeedsAsync(client, feeds, targetDate.Value, zone, maxConcurrency, requestSpacingMs, cancellationToken);
+        var feedResults = await FetchFeedsAsync(client, feeds, targetDate, zone, maxConcurrency, requestSpacingMs, cancellationToken);
+        var posts = feedResults.SelectMany(result => result.Posts).OrderByDescending(post => post.PublishedAt).ToArray();
+        var errors = feedResults.Where(result => result.Error is not null).Select(result => result.Error!).ToArray();
 
-        var posts = feedResults
-            .SelectMany(result => result.Posts)
-            .OrderByDescending(post => post.PublishedAt)
-            .ToArray();
-
-        var errors = feedResults
-            .Where(result => result.Error is not null)
-            .Select(result => result.Error!)
-            .ToArray();
-
-        return Ok(new SubstackDailyResponse(
-            Date: targetDate.Value,
-            TimeZone: zone.Id,
-            FeedCount: feeds.Count,
-            PostCount: posts.Length,
-            Posts: posts,
-            Errors: errors));
+        return new SubstackDailyResponse(targetDate, zone.Id, feeds.Count, posts.Length, posts, errors);
     }
 
     private async Task<FeedFetchResult[]> FetchFeedsAsync(
@@ -206,6 +236,7 @@ public sealed class SubstackController : ControllerBase
         var publishedAt = ParseDate((string?)item.Element("pubDate") ?? (string?)item.Element(XName.Get("date", "http://purl.org/dc/elements/1.1/")));
         var contentHtml = (string?)item.Element(ContentEncodedName) ?? (string?)item.Element("description");
         var link = ((string?)item.Element("link"))?.Trim();
+        var contentText = ToPlainText(contentHtml);
 
         return new SubstackPost(
             FeedTitle: feed.Title,
@@ -215,7 +246,9 @@ public sealed class SubstackController : ControllerBase
             Url: link,
             Author: ((string?)item.Element(DcCreatorName))?.Trim(),
             PublishedAt: publishedAt,
-            ContentText: ToPlainText(contentHtml));
+            ContentText: contentText,
+            ContentCharacterCount: contentText?.Length ?? 0,
+            IsPaidPost: IsPaidPost(contentText));
     }
 
     private static SubstackPost ParseAtomPost(XElement entry, SubstackFeed feed)
@@ -227,6 +260,7 @@ public sealed class SubstackController : ControllerBase
             .FirstOrDefault(linkElement => ((string?)linkElement.Attribute("rel")) is null or "alternate")
             ?.Attribute("href")
             ?.Value;
+        var contentText = ToPlainText(contentHtml);
 
         return new SubstackPost(
             FeedTitle: feed.Title,
@@ -236,7 +270,9 @@ public sealed class SubstackController : ControllerBase
             Url: link,
             Author: ((string?)entry.Element(atom + "author")?.Element(atom + "name"))?.Trim(),
             PublishedAt: publishedAt,
-            ContentText: ToPlainText(contentHtml));
+            ContentText: contentText,
+            ContentCharacterCount: contentText?.Length ?? 0,
+            IsPaidPost: IsPaidPost(contentText));
     }
 
     private static DateTimeOffset? ParseDate(string? value)
@@ -262,6 +298,9 @@ public sealed class SubstackController : ControllerBase
         var decoded = WebUtility.HtmlDecode(withoutTags);
         return WhitespaceRegex.Replace(decoded, " ").Trim();
     }
+
+    private static bool IsPaidPost(string? contentText) =>
+        contentText?.EndsWith("Read more", StringComparison.OrdinalIgnoreCase) == true;
 
     private static DateOnly? ParseTargetDate(string? date, TimeZoneInfo zone)
     {
@@ -332,7 +371,11 @@ public sealed record SubstackPost(
     [property: Description("Publication timestamp parsed from the feed item.")]
     DateTimeOffset? PublishedAt,
     [property: Description("Plain-text version of the feed content, suitable for summarization.")]
-    string? ContentText);
+    string? ContentText,
+    [property: Description("Number of characters in the plain-text feed content.")]
+    int ContentCharacterCount,
+    [property: Description("Whether the feed content ends with 'Read more', indicating a paid post preview.")]
+    bool IsPaidPost);
 
 /// <summary>
 /// Error details for a feed that could not be fetched or parsed.
@@ -344,3 +387,13 @@ public sealed record FeedError(
     string FeedUrl,
     [property: Description("Error message captured while fetching or parsing the feed.")]
     string Message);
+
+/// <summary>
+/// Summary of the most recently completed Substack refresh.
+/// </summary>
+public sealed record SubstackRefreshStatus(
+    DateTimeOffset? LastRefreshTime,
+    int FeedCount,
+    int PostCount,
+    int ErrorCount,
+    string CacheStatus);

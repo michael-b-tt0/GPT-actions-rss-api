@@ -6,13 +6,19 @@ Accept: application/json
 
 ###
 
+POST {{RSS_API_HostAddress}}/substack/refresh
+Accept: application/json
+X-API-Key: {{SubstackApiKey}}
+
+###
+
 GET {{RSS_API_HostAddress}}/substack/today
 Accept: application/json
 X-API-Key: {{SubstackApiKey}}
 
 ###
 
-GET {{RSS_API_HostAddress}}/substack/today?date=2026-07-09&timeZone=Europe/London
+GET {{RSS_API_HostAddress}}/substack/status
 Accept: application/json
 X-API-Key: {{SubstackApiKey}}
 
