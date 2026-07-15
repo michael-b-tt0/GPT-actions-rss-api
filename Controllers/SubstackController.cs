@@ -1,5 +1,7 @@
 using System.Globalization;
 using System.Net;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Threading;
@@ -83,22 +85,52 @@ public sealed class SubstackController : ControllerBase
     [HttpGet("today", Name = "GetTodaysSubstackPosts")]
     [EndpointSummary("Get cached daily Substack posts")]
     [EndpointDescription("Returns the most recently refreshed Substack results without downloading feeds.")]
-    [ProducesResponseType(typeof(SubstackDailyResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(SubstackDailySummaryResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
-    public ActionResult<SubstackDailyResponse> GetToday()
+    public async Task<ActionResult<SubstackDailySummaryResponse>> GetToday(CancellationToken cancellationToken)
     {
-        var cache = _cacheStore.Get();
-        return cache is null
-            ? NotFound("No cached Substack results are available. Call POST /substack/refresh first.")
-            : Ok(cache.Response);
+        var cache = await _cacheStore.GetAsync(cancellationToken);
+        if (cache is null)
+        {
+            return NotFound("No cached Substack results are available. Call POST /substack/refresh first.");
+        }
+
+        var response = cache.Response;
+        return Ok(new SubstackDailySummaryResponse(
+            response.Date,
+            response.TimeZone,
+            response.FeedCount,
+            response.PostCount,
+            response.Posts.Select(ToSummary).ToArray(),
+            response.Errors));
+    }
+
+    [HttpGet("post-detail", Name = "GetSubstackPostDetail")]
+    [EndpointSummary("Get full text for a cached Substack post")]
+    [EndpointDescription("Returns the complete cached content text for one post identified in the daily summary.")]
+    [ProducesResponseType(typeof(SubstackPost), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
+    public async Task<ActionResult<SubstackPost>> GetPostDetail([FromQuery] string id, CancellationToken cancellationToken)
+    {
+        var cache = await _cacheStore.GetAsync(cancellationToken);
+        var post = cache?.Response.Posts.FirstOrDefault(candidate =>
+            string.Equals(GetPostId(candidate), id, StringComparison.Ordinal));
+
+        return post is null
+            ? NotFound("No cached Substack post was found for the supplied id.")
+            : Ok(post with
+            {
+                Id = GetPostId(post),
+                ContentTextTruncated = post.ContentTextTruncated ?? TruncateContentText(post.ContentText)
+            });
     }
 
     [HttpGet("status", Name = "GetSubstackStatus")]
     [EndpointSummary("Get Substack cache status")]
     [ProducesResponseType(typeof(SubstackRefreshStatus), StatusCodes.Status200OK)]
-    public ActionResult<SubstackRefreshStatus> GetStatus()
+    public async Task<ActionResult<SubstackRefreshStatus>> GetStatus(CancellationToken cancellationToken)
     {
-        var cache = _cacheStore.Get();
+        var cache = await _cacheStore.GetAsync(cancellationToken);
         if (cache is null)
         {
             return Ok(new SubstackRefreshStatus(null, 0, 0, 0, "missing"));
@@ -237,16 +269,19 @@ public sealed class SubstackController : ControllerBase
         var contentHtml = (string?)item.Element(ContentEncodedName) ?? (string?)item.Element("description");
         var link = ((string?)item.Element("link"))?.Trim();
         var contentText = ToPlainText(contentHtml);
+        var title = ((string?)item.Element("title"))?.Trim() ?? "Untitled post";
 
         return new SubstackPost(
+            Id: CreatePostId(feed.FeedUrl, link, publishedAt, title),
             FeedTitle: feed.Title,
             FeedUrl: feed.FeedUrl,
             SiteUrl: feed.SiteUrl,
-            Title: ((string?)item.Element("title"))?.Trim() ?? "Untitled post",
+            Title: title,
             Url: link,
             Author: ((string?)item.Element(DcCreatorName))?.Trim(),
             PublishedAt: publishedAt,
             ContentText: contentText,
+            ContentTextTruncated: TruncateContentText(contentText),
             ContentCharacterCount: contentText?.Length ?? 0,
             IsPaidPost: IsPaidPost(contentText));
     }
@@ -261,16 +296,19 @@ public sealed class SubstackController : ControllerBase
             ?.Attribute("href")
             ?.Value;
         var contentText = ToPlainText(contentHtml);
+        var title = ((string?)entry.Element(atom + "title"))?.Trim() ?? "Untitled post";
 
         return new SubstackPost(
+            Id: CreatePostId(feed.FeedUrl, link, publishedAt, title),
             FeedTitle: feed.Title,
             FeedUrl: feed.FeedUrl,
             SiteUrl: feed.SiteUrl,
-            Title: ((string?)entry.Element(atom + "title"))?.Trim() ?? "Untitled post",
+            Title: title,
             Url: link,
             Author: ((string?)entry.Element(atom + "author")?.Element(atom + "name"))?.Trim(),
             PublishedAt: publishedAt,
             ContentText: contentText,
+            ContentTextTruncated: TruncateContentText(contentText),
             ContentCharacterCount: contentText?.Length ?? 0,
             IsPaidPost: IsPaidPost(contentText));
     }
@@ -301,6 +339,33 @@ public sealed class SubstackController : ControllerBase
 
     private static bool IsPaidPost(string? contentText) =>
         contentText?.EndsWith("Read more", StringComparison.OrdinalIgnoreCase) == true;
+
+    private static string? TruncateContentText(string? contentText) =>
+        contentText is null ? null : contentText[..Math.Min(contentText.Length, 3000)];
+
+    private static string CreatePostId(string feedUrl, string? postUrl, DateTimeOffset? publishedAt, string title)
+    {
+        var source = $"{feedUrl}\n{postUrl}\n{publishedAt:O}\n{title}";
+        return Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(source)))[..24].ToLowerInvariant();
+    }
+
+    private static string GetPostId(SubstackPost post) =>
+        string.IsNullOrWhiteSpace(post.Id)
+            ? CreatePostId(post.FeedUrl, post.Url, post.PublishedAt, post.Title)
+            : post.Id;
+
+    private static SubstackPostSummary ToSummary(SubstackPost post) => new(
+        GetPostId(post),
+        post.FeedTitle,
+        post.FeedUrl,
+        post.SiteUrl,
+        post.Title,
+        post.Url,
+        post.Author,
+        post.PublishedAt,
+        post.ContentTextTruncated ?? TruncateContentText(post.ContentText),
+        post.ContentCharacterCount,
+        post.IsPaidPost);
 
     private static DateOnly? ParseTargetDate(string? date, TimeZoneInfo zone)
     {
@@ -353,9 +418,22 @@ public sealed record SubstackDailyResponse(
     IReadOnlyList<FeedError> Errors);
 
 /// <summary>
+/// Compact daily response for GPT Actions and other clients that do not need every full article.
+/// </summary>
+public sealed record SubstackDailySummaryResponse(
+    DateOnly Date,
+    string TimeZone,
+    int FeedCount,
+    int PostCount,
+    IReadOnlyList<SubstackPostSummary> Posts,
+    IReadOnlyList<FeedError> Errors);
+
+/// <summary>
 /// Normalized representation of a Substack post returned from an RSS or Atom feed.
 /// </summary>
 public sealed record SubstackPost(
+    [property: Description("Stable identifier for retrieving this post's full cached content.")]
+    string Id,
     [property: Description("Display title of the Substack feed that produced the post.")]
     string FeedTitle,
     [property: Description("RSS or Atom feed URL that produced the post.")]
@@ -372,9 +450,27 @@ public sealed record SubstackPost(
     DateTimeOffset? PublishedAt,
     [property: Description("Plain-text version of the feed content, suitable for summarization.")]
     string? ContentText,
+    [property: Description("First 3,000 characters of the plain-text feed content.")]
+    string? ContentTextTruncated,
     [property: Description("Number of characters in the plain-text feed content.")]
     int ContentCharacterCount,
     [property: Description("Whether the feed content ends with 'Read more', indicating a paid post preview.")]
+    bool IsPaidPost);
+
+/// <summary>
+/// Lightweight representation of a post returned by the daily endpoint.
+/// </summary>
+public sealed record SubstackPostSummary(
+    string Id,
+    string FeedTitle,
+    string FeedUrl,
+    string? SiteUrl,
+    string Title,
+    string? Url,
+    string? Author,
+    DateTimeOffset? PublishedAt,
+    string? ContentTextTruncated,
+    int ContentCharacterCount,
     bool IsPaidPost);
 
 /// <summary>

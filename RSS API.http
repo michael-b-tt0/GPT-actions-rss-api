@@ -23,3 +23,9 @@ Accept: application/json
 X-API-Key: {{SubstackApiKey}}
 
 ###
+
+GET {{RSS_API_HostAddress}}/substack/post-detail?id=replace-with-post-id
+Accept: application/json
+X-API-Key: {{SubstackApiKey}}
+
+###

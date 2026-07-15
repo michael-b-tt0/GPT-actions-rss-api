@@ -7,8 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddHttpClient();
+builder.Services.AddHttpClient("GitHubCache", client => client.BaseAddress = new Uri("https://api.github.com/"));
 builder.Services.AddSingleton<SubstackCacheStore>();
 builder.Services.Configure<ApiKeyOptions>(builder.Configuration.GetSection(ApiKeyOptions.SectionName));
+builder.Services.Configure<GitHubCacheOptions>(builder.Configuration.GetSection(GitHubCacheOptions.SectionName));
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
