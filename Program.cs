@@ -22,13 +22,15 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+app.MapGet("/health", () => Results.Ok("OK"));
 
-app.UseHttpsRedirection();
+// Optional: expose OpenAPI in production for GPT Actions.
+app.MapOpenApi();
 
 app.UseMiddleware<SubstackApiKeyMiddleware>();
 
 app.UseAuthorization();
 
 app.MapControllers();
-app.MapGet("/health", () => Results.Ok("OK"));
+
 app.Run();
