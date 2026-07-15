@@ -24,8 +24,6 @@ if (app.Environment.IsDevelopment())
 }
 app.MapGet("/health", () => Results.Ok("OK"));
 
-// Optional: expose OpenAPI in production for GPT Actions.
-app.MapOpenApi();
 
 app.UseMiddleware<SubstackApiKeyMiddleware>();
 
