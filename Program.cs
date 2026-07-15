@@ -24,11 +24,32 @@ if (app.Environment.IsDevelopment())
 }
 app.MapGet("/health", () => Results.Ok("OK"));
 
+app.Use(async (context, next) =>
+{
+    app.Logger.LogInformation(
+        "Incoming request: {Method} {Host}{Path}",
+        context.Request.Method,
+        context.Request.Host,
+        context.Request.Path);
+
+    context.Response.Headers["X-RSS-API"] = "GPT-actions-rss-api";
+
+    await next();
+});
 
 app.UseMiddleware<SubstackApiKeyMiddleware>();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapFallback((HttpContext context) =>
+    Results.Json(new
+    {
+        message = "Request reached ASP.NET Core",
+        method = context.Request.Method,
+        host = context.Request.Host.Value,
+        path = context.Request.Path.Value
+    }));
 
 app.Run();
