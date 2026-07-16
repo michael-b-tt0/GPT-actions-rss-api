@@ -24,16 +24,30 @@ if (app.Environment.IsDevelopment())
 }
 app.MapGet("/health", () => Results.Ok("OK"));
 
+app.MapGet("/probe", () => Results.Ok(new
+{
+    message = "ASP.NET Core received this request",
+    time = DateTimeOffset.UtcNow
+}));
+
+app.MapGet("/debug/routes", (IEnumerable<EndpointDataSource> sources) =>
+{
+    return sources
+        .SelectMany(source => source.Endpoints)
+        .OfType<RouteEndpoint>()
+        .Select(endpoint => new
+        {
+            route = endpoint.RoutePattern.RawText,
+            methods = endpoint.Metadata
+                .GetMetadata<HttpMethodMetadata>()
+                ?.HttpMethods
+        })
+        .OrderBy(endpoint => endpoint.route);
+});
+
 app.Use(async (context, next) =>
 {
-    app.Logger.LogInformation(
-        "Incoming request: {Method} {Host}{Path}",
-        context.Request.Method,
-        context.Request.Host,
-        context.Request.Path);
-
-    context.Response.Headers["X-RSS-API"] = "GPT-actions-rss-api";
-
+    context.Response.Headers["X-RSS-API"] = "aspnet-core";
     await next();
 });
 
@@ -43,13 +57,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.MapFallback((HttpContext context) =>
-    Results.Json(new
-    {
-        message = "Request reached ASP.NET Core",
-        method = context.Request.Method,
-        host = context.Request.Host.Value,
-        path = context.Request.Path.Value
-    }));
+
 
 app.Run();
