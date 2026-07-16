@@ -29,25 +29,29 @@ public sealed class SubstackController : ControllerBase
     private readonly IWebHostEnvironment _environment;
     private readonly ILogger<SubstackController> _logger;
     private readonly SubstackCacheStore _cacheStore;
+    private readonly SubstackRefreshQueue _refreshQueue;
 
     public SubstackController(
         IHttpClientFactory httpClientFactory,
         IWebHostEnvironment environment,
         ILogger<SubstackController> logger,
-        SubstackCacheStore cacheStore)
+        SubstackCacheStore cacheStore,
+        SubstackRefreshQueue refreshQueue)
     {
         _httpClientFactory = httpClientFactory;
         _environment = environment;
         _logger = logger;
         _cacheStore = cacheStore;
+        _refreshQueue = refreshQueue;
     }
 
     [HttpPost("refresh", Name = "RefreshSubstackPosts")]
     [EndpointSummary("Refresh daily Substack posts")]
-    [EndpointDescription("Fetches Substack feeds from the OPML subscription list and saves the results to the local cache.")]
-    [ProducesResponseType(typeof(SubstackDailyResponse), StatusCodes.Status200OK)]
+    [EndpointDescription("Queues a background refresh and returns immediately. Use GET /substack/status to monitor it.")]
+    [ProducesResponseType(typeof(SubstackRefreshJobStatus), StatusCodes.Status202Accepted)]
     [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<SubstackDailyResponse>> Refresh(
+    [ProducesResponseType(typeof(SubstackRefreshJobStatus), StatusCodes.Status409Conflict)]
+    public ActionResult<SubstackRefreshJobStatus> Refresh(
         [Description("Optional date in yyyy-MM-dd format. Defaults to today in the selected time zone.")]
         [FromQuery] string? date = null,
         [Description("Time zone used to decide which posts count as belonging to the requested day.")]
@@ -55,8 +59,7 @@ public sealed class SubstackController : ControllerBase
         [Description("Maximum number of feed downloads allowed to run at the same time.")]
         [FromQuery] int maxConcurrency = 2,
         [Description("Minimum delay in milliseconds between starting outbound Substack feed requests.")]
-        [FromQuery] int requestSpacingMs = 1250,
-        CancellationToken cancellationToken = default)
+        [FromQuery] int requestSpacingMs = 1250)
     {
         var zone = ResolveTimeZone(timeZone);
         var targetDate = ParseTargetDate(date, zone);
@@ -75,11 +78,15 @@ public sealed class SubstackController : ControllerBase
             return BadRequest("Use requestSpacingMs between 0 and 10000.");
         }
 
-        var cache = await _cacheStore.RefreshAsync(
-            token => FetchDailyPostsAsync(targetDate.Value, zone, maxConcurrency, requestSpacingMs, token),
-            cancellationToken);
+        var queued = _refreshQueue.TryQueue(
+            token => _cacheStore.RefreshAsync(
+                refreshToken => FetchDailyPostsAsync(targetDate.Value, zone, maxConcurrency, requestSpacingMs, refreshToken),
+                token),
+            out var status);
 
-        return Ok(cache.Response);
+        return queued
+            ? AcceptedAtAction(nameof(GetStatus), status)
+            : Conflict(status);
     }
 
     [HttpGet("today", Name = "GetTodaysSubstackPosts")]
@@ -126,25 +133,12 @@ public sealed class SubstackController : ControllerBase
     }
 
     [HttpGet("status", Name = "GetSubstackStatus")]
-    [EndpointSummary("Get Substack cache status")]
-    [ProducesResponseType(typeof(SubstackRefreshStatus), StatusCodes.Status200OK)]
-    public async Task<ActionResult<SubstackRefreshStatus>> GetStatus(CancellationToken cancellationToken)
+    [EndpointSummary("Get Substack refresh job status")]
+    [EndpointDescription("Reports whether the latest refresh job is idle, queued, running, completed, or failed.")]
+    [ProducesResponseType(typeof(SubstackRefreshJobStatus), StatusCodes.Status200OK)]
+    public ActionResult<SubstackRefreshJobStatus> GetStatus()
     {
-        var cache = await _cacheStore.GetAsync(cancellationToken);
-        if (cache is null)
-        {
-            return Ok(new SubstackRefreshStatus(null, 0, 0, 0, "missing"));
-        }
-
-        var zone = ResolveTimeZone(cache.Response.TimeZone);
-        var today = DateOnly.FromDateTime(TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow, zone).DateTime);
-        var status = cache.Response.Date == today ? "fresh" : "stale";
-        return Ok(new SubstackRefreshStatus(
-            cache.RefreshedAt,
-            cache.Response.FeedCount,
-            cache.Response.PostCount,
-            cache.Response.Errors.Count,
-            status));
+        return Ok(_refreshQueue.GetStatus());
     }
 
     private async Task<SubstackDailyResponse> FetchDailyPostsAsync(
@@ -483,13 +477,3 @@ public sealed record FeedError(
     string FeedUrl,
     [property: Description("Error message captured while fetching or parsing the feed.")]
     string Message);
-
-/// <summary>
-/// Summary of the most recently completed Substack refresh.
-/// </summary>
-public sealed record SubstackRefreshStatus(
-    DateTimeOffset? LastRefreshTime,
-    int FeedCount,
-    int PostCount,
-    int ErrorCount,
-    string CacheStatus);
