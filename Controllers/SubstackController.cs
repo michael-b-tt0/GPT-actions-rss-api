@@ -26,22 +26,22 @@ public sealed class SubstackController : ControllerBase
     private static DateTimeOffset _nextAllowedRequestStart = DateTimeOffset.MinValue;
 
     private readonly IHttpClientFactory _httpClientFactory;
-    private readonly IWebHostEnvironment _environment;
     private readonly ILogger<SubstackController> _logger;
     private readonly SubstackCacheStore _cacheStore;
+    private readonly GitHubOpmlStore _opmlStore;
     private readonly SubstackRefreshQueue _refreshQueue;
 
     public SubstackController(
         IHttpClientFactory httpClientFactory,
-        IWebHostEnvironment environment,
         ILogger<SubstackController> logger,
         SubstackCacheStore cacheStore,
+        GitHubOpmlStore opmlStore,
         SubstackRefreshQueue refreshQueue)
     {
         _httpClientFactory = httpClientFactory;
-        _environment = environment;
         _logger = logger;
         _cacheStore = cacheStore;
+        _opmlStore = opmlStore;
         _refreshQueue = refreshQueue;
     }
 
@@ -133,12 +133,37 @@ public sealed class SubstackController : ControllerBase
     }
 
     [HttpGet("status", Name = "GetSubstackStatus")]
-    [EndpointSummary("Get Substack refresh job status")]
-    [EndpointDescription("Reports whether the latest refresh job is idle, queued, running, completed, or failed.")]
+    [EndpointSummary("Get Substack refresh and cache status")]
+    [EndpointDescription("Reports if the latest refresh job state is idle, queued, running, completed, or failed, and whether the cached Substack results are current, stale, or missing.")]
     [ProducesResponseType(typeof(SubstackRefreshJobStatus), StatusCodes.Status200OK)]
-    public ActionResult<SubstackRefreshJobStatus> GetStatus()
+    public async Task<ActionResult<SubstackRefreshJobStatus>> GetStatus(CancellationToken cancellationToken)
     {
-        return Ok(_refreshQueue.GetStatus());
+        var status = _refreshQueue.GetStatus();
+        var cache = await _cacheStore.GetLatestAsync(cancellationToken);
+        if (cache is null)
+        {
+            return Ok(status with
+            {
+                CacheDate = null,
+                CacheStatus = "missing",
+                FeedCount = null,
+                PostCount = null,
+                ErrorCount = null
+            });
+        }
+
+        var response = cache.Response;
+        var cacheTimeZone = ResolveTimeZone(response.TimeZone);
+        var currentDate = DateOnly.FromDateTime(TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow, cacheTimeZone).DateTime);
+
+        return Ok(status with
+        {
+            CacheDate = response.Date,
+            CacheStatus = response.Date == currentDate ? "current" : "stale",
+            FeedCount = response.FeedCount,
+            PostCount = response.PostCount,
+            ErrorCount = response.Errors.Count
+        });
     }
 
     private async Task<SubstackDailyResponse> FetchDailyPostsAsync(
@@ -148,7 +173,7 @@ public sealed class SubstackController : ControllerBase
         int requestSpacingMs,
         CancellationToken cancellationToken)
     {
-        var feeds = LoadSubstackFeeds();
+        var feeds = await LoadSubstackFeedsAsync(cancellationToken);
         var client = _httpClientFactory.CreateClient();
         client.DefaultRequestHeaders.UserAgent.ParseAdd("RSS-API/1.0 (+daily-substack-summary)");
         client.Timeout = TimeSpan.FromSeconds(45);
@@ -210,10 +235,9 @@ public sealed class SubstackController : ControllerBase
         }
     }
 
-    private IReadOnlyList<SubstackFeed> LoadSubstackFeeds()
+    private async Task<IReadOnlyList<SubstackFeed>> LoadSubstackFeedsAsync(CancellationToken cancellationToken)
     {
-        var opmlPath = Path.Combine(_environment.ContentRootPath, "feedbro-subscriptions-20260317-015028.opml");
-        var document = XDocument.Load(opmlPath);
+        var document = await _opmlStore.GetAsync(cancellationToken);
 
         return document
             .Descendants(OutlineName)

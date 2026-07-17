@@ -39,7 +39,13 @@ public sealed class SubstackCacheStore
 
     public async Task<SubstackCacheDocument?> GetAsync(CancellationToken cancellationToken)
     {
-        await EnsureLoadedAsync(cancellationToken);
+        await LoadAsync(forceReload: false, cancellationToken);
+        return _cache;
+    }
+
+    public async Task<SubstackCacheDocument?> GetLatestAsync(CancellationToken cancellationToken)
+    {
+        await LoadAsync(forceReload: true, cancellationToken);
         return _cache;
     }
 
@@ -50,7 +56,7 @@ public sealed class SubstackCacheStore
         await _refreshLock.WaitAsync(cancellationToken);
         try
         {
-            await EnsureLoadedAsync(cancellationToken);
+            await LoadAsync(forceReload: false, cancellationToken);
 
             var response = await refresh(cancellationToken);
             var cache = new SubstackCacheDocument(response, DateTimeOffset.UtcNow);
@@ -64,20 +70,22 @@ public sealed class SubstackCacheStore
         }
     }
 
-    private async Task EnsureLoadedAsync(CancellationToken cancellationToken)
+    private async Task LoadAsync(bool forceReload, CancellationToken cancellationToken)
     {
-        if (_loaded) return;
+        if (_loaded && !forceReload) return;
 
         await _loadLock.WaitAsync(cancellationToken);
         try
         {
-            if (_loaded) return;
+            if (_loaded && !forceReload) return;
 
             ValidateOptions();
             using var request = CreateRequest(HttpMethod.Get);
             using var response = await _httpClientFactory.CreateClient("GitHubCache").SendAsync(request, cancellationToken);
             if (response.StatusCode == HttpStatusCode.NotFound)
             {
+                _cache = null;
+                _contentSha = null;
                 _loaded = true;
                 return;
             }

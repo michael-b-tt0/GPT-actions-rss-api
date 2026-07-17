@@ -10,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddHttpClient();
 builder.Services.AddHttpClient("GitHubCache", client => client.BaseAddress = new Uri("https://api.github.com/"));
 builder.Services.AddSingleton<SubstackCacheStore>();
+builder.Services.AddSingleton<GitHubOpmlStore>();
 builder.Services.AddSingleton<SubstackRefreshQueue>();
 builder.Services.AddHostedService<SubstackRefreshWorker>();
 builder.Services.Configure<ApiKeyOptions>(builder.Configuration.GetSection(ApiKeyOptions.SectionName));
@@ -24,6 +25,8 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
+app.MapOpenApi();
 app.MapGet("/health", () => Results.Ok("OK"));
 
 app.MapGet("/probe", () => Results.Ok(new
@@ -32,20 +35,7 @@ app.MapGet("/probe", () => Results.Ok(new
     time = DateTimeOffset.UtcNow
 }));
 
-app.MapGet("/debug/routes", (IEnumerable<EndpointDataSource> sources) =>
-{
-    return sources
-        .SelectMany(source => source.Endpoints)
-        .OfType<RouteEndpoint>()
-        .Select(endpoint => new
-        {
-            route = endpoint.RoutePattern.RawText,
-            methods = endpoint.Metadata
-                .GetMetadata<HttpMethodMetadata>()
-                ?.HttpMethods
-        })
-        .OrderBy(endpoint => endpoint.route);
-});
+
 
 app.Use(async (context, next) =>
 {

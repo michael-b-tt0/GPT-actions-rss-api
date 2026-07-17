@@ -121,6 +121,9 @@ public sealed record SubstackRefreshJobStatus(
     int? ErrorCount,
     string? Error)
 {
+    public DateOnly? CacheDate { get; init; }
+    public string CacheStatus { get; init; } = "missing";
+
     public static SubstackRefreshJobStatus Idle { get; } =
         new(null, "idle", null, null, null, null, null, null, null);
 }

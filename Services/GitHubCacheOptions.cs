@@ -9,4 +9,5 @@ public sealed class GitHubCacheOptions
     public string Repository { get; init; } = "my-api-data";
     public string Branch { get; init; } = "main";
     public string Path { get; init; } = "substack-cache.json";
+    public string OpmlPath { get; init; } = "substack-subscriptions.opml";
 }

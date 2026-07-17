@@ -26,10 +26,6 @@ ENV DOTNET_EnableDiagnostics=0
 
 COPY --from=build /app/publish .
 
-# The Substack controller loads this OPML file from ContentRootPath,
-# so make sure it exists beside the published app.
-COPY --from=build /src/feedbro-subscriptions-20260317-015028.opml .
-
 EXPOSE 8080
 
 # Official modern .NET images include a non-root app user.
