@@ -91,7 +91,7 @@ public sealed class SubstackController : ControllerBase
 
     [HttpGet("today", Name = "GetTodaysSubstackPosts")]
     [EndpointSummary("Get cached daily Substack posts")]
-    [EndpointDescription("Returns the most recently refreshed Substack results without downloading feeds.")]
+    [EndpointDescription("Returns the most recently refreshed Substack posts without downloading feeds. Feed errors are available from GET /substack/errors.")]
     [ProducesResponseType(typeof(SubstackDailySummaryResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
     public async Task<ActionResult<SubstackDailySummaryResponse>> GetToday(CancellationToken cancellationToken)
@@ -108,7 +108,27 @@ public sealed class SubstackController : ControllerBase
             response.TimeZone,
             response.FeedCount,
             response.PostCount,
-            response.Posts.Select(ToSummary).ToArray(),
+            response.Posts.Select(ToSummary).ToArray()));
+    }
+
+    [HttpGet("errors", Name = "GetSubstackFeedErrors")]
+    [EndpointSummary("Get cached Substack feed errors")]
+    [EndpointDescription("Returns feed errors from the most recently refreshed Substack results without downloading feeds.")]
+    [ProducesResponseType(typeof(SubstackDailyErrorsResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
+    public async Task<ActionResult<SubstackDailyErrorsResponse>> GetErrors(CancellationToken cancellationToken)
+    {
+        var cache = await _cacheStore.GetAsync(cancellationToken);
+        if (cache is null)
+        {
+            return NotFound("No cached Substack results are available. Call POST /substack/refresh first.");
+        }
+
+        var response = cache.Response;
+        return Ok(new SubstackDailyErrorsResponse(
+            response.Date,
+            response.TimeZone,
+            response.Errors.Count,
             response.Errors));
     }
 
@@ -359,7 +379,7 @@ public sealed class SubstackController : ControllerBase
         contentText?.EndsWith("Read more", StringComparison.OrdinalIgnoreCase) == true;
 
     private static string? TruncateContentText(string? contentText) =>
-        contentText is null ? null : contentText[..Math.Min(contentText.Length, 3000)];
+        contentText is null ? null : contentText[..Math.Min(contentText.Length, 2850)];
 
     private static string CreatePostId(string feedUrl, string? postUrl, DateTimeOffset? publishedAt, string title)
     {
@@ -443,7 +463,15 @@ public sealed record SubstackDailySummaryResponse(
     string TimeZone,
     int FeedCount,
     int PostCount,
-    IReadOnlyList<SubstackPostSummary> Posts,
+    IReadOnlyList<SubstackPostSummary> Posts);
+
+/// <summary>
+/// Feed errors recorded during the cached Substack refresh.
+/// </summary>
+public sealed record SubstackDailyErrorsResponse(
+    DateOnly Date,
+    string TimeZone,
+    int ErrorCount,
     IReadOnlyList<FeedError> Errors);
 
 /// <summary>
@@ -468,7 +496,7 @@ public sealed record SubstackPost(
     DateTimeOffset? PublishedAt,
     [property: Description("Plain-text version of the feed content, suitable for summarization.")]
     string? ContentText,
-    [property: Description("First 3,000 characters of the plain-text feed content.")]
+    [property: Description("First 2,850 characters of the plain-text feed content.")]
     string? ContentTextTruncated,
     [property: Description("Number of characters in the plain-text feed content.")]
     int ContentCharacterCount,

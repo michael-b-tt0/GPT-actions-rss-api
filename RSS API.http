@@ -18,6 +18,12 @@ X-API-Key: {{SubstackApiKey}}
 
 ###
 
+GET {{RSS_API_HostAddress}}/substack/errors
+Accept: application/json
+X-API-Key: {{SubstackApiKey}}
+
+###
+
 GET {{RSS_API_HostAddress}}/substack/status
 Accept: application/json
 X-API-Key: {{SubstackApiKey}}
@@ -29,3 +35,4 @@ Accept: application/json
 X-API-Key: {{SubstackApiKey}}
 
 ###
+

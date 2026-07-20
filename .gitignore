@@ -7,3 +7,5 @@
 /obj
 /Properties
 /appsettings.example.json
+/schema.json
+/wakepoint.ps1
