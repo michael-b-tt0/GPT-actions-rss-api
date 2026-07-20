@@ -2,6 +2,7 @@ using System.Globalization;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Threading;
@@ -15,6 +16,9 @@ namespace RSS_API.Controllers;
 [Route("[controller]")]
 public sealed class SubstackController : ControllerBase
 {
+    private const int MaxTodayResponseBytes = 100_000;
+    private static readonly JsonSerializerOptions ResponseJsonOptions = new(JsonSerializerDefaults.Web);
+
     private static readonly XName OutlineName = "outline";
     private static readonly XName RssItemName = "item";
     private static readonly XName AtomEntryName = XName.Get("entry", "http://www.w3.org/2005/Atom");
@@ -91,7 +95,7 @@ public sealed class SubstackController : ControllerBase
 
     [HttpGet("today", Name = "GetTodaysSubstackPosts")]
     [EndpointSummary("Get cached daily Substack posts")]
-    [EndpointDescription("Returns the most recently refreshed Substack posts without downloading feeds. Feed errors are available from GET /substack/errors.")]
+    [EndpointDescription("Returns the most recently refreshed Substack posts without downloading feeds. The JSON response is capped at 100,000 UTF-8 bytes by omitting whole post summaries from the end of the list when necessary. Feed errors are available from GET /substack/errors.")]
     [ProducesResponseType(typeof(SubstackDailySummaryResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
     public async Task<ActionResult<SubstackDailySummaryResponse>> GetToday(CancellationToken cancellationToken)
@@ -103,12 +107,26 @@ public sealed class SubstackController : ControllerBase
         }
 
         var response = cache.Response;
-        return Ok(new SubstackDailySummaryResponse(
-            response.Date,
-            response.TimeZone,
-            response.FeedCount,
-            response.PostCount,
-            response.Posts.Select(ToSummary).ToArray()));
+        var summaries = response.Posts.Select(ToSummary).ToArray();
+        var includedPosts = new List<SubstackPostSummary>(summaries.Length);
+
+        foreach (var summary in summaries)
+        {
+            includedPosts.Add(summary);
+            // Test the larger non-truncated form. If this post does not fit, the final
+            // truncated response is smaller because its isTruncated value is true.
+            var candidate = CreateDailySummary(response, includedPosts, isTruncated: false);
+            if (JsonSerializer.SerializeToUtf8Bytes(candidate, ResponseJsonOptions).Length <= MaxTodayResponseBytes)
+            {
+                continue;
+            }
+
+            includedPosts.RemoveAt(includedPosts.Count - 1);
+            break;
+        }
+
+        var isTruncated = includedPosts.Count < summaries.Length;
+        return Ok(CreateDailySummary(response, includedPosts, isTruncated));
     }
 
     [HttpGet("errors", Name = "GetSubstackFeedErrors")]
@@ -379,7 +397,7 @@ public sealed class SubstackController : ControllerBase
         contentText?.EndsWith("Read more", StringComparison.OrdinalIgnoreCase) == true;
 
     private static string? TruncateContentText(string? contentText) =>
-        contentText is null ? null : contentText[..Math.Min(contentText.Length, 2850)];
+        contentText is null ? null : contentText[..Math.Min(contentText.Length, 2800)];
 
     private static string CreatePostId(string feedUrl, string? postUrl, DateTimeOffset? publishedAt, string title)
     {
@@ -404,6 +422,18 @@ public sealed class SubstackController : ControllerBase
         post.ContentTextTruncated ?? TruncateContentText(post.ContentText),
         post.ContentCharacterCount,
         post.IsPaidPost);
+
+    private static SubstackDailySummaryResponse CreateDailySummary(
+        SubstackDailyResponse response,
+        IReadOnlyList<SubstackPostSummary> posts,
+        bool isTruncated) => new(
+        response.Date,
+        response.TimeZone,
+        response.FeedCount,
+        response.PostCount,
+        posts,
+        posts.Count,
+        isTruncated);
 
     private static DateOnly? ParseTargetDate(string? date, TimeZoneInfo zone)
     {
@@ -463,7 +493,9 @@ public sealed record SubstackDailySummaryResponse(
     string TimeZone,
     int FeedCount,
     int PostCount,
-    IReadOnlyList<SubstackPostSummary> Posts);
+    IReadOnlyList<SubstackPostSummary> Posts,
+    int ReturnedPostCount,
+    bool IsTruncated);
 
 /// <summary>
 /// Feed errors recorded during the cached Substack refresh.
@@ -496,7 +528,7 @@ public sealed record SubstackPost(
     DateTimeOffset? PublishedAt,
     [property: Description("Plain-text version of the feed content, suitable for summarization.")]
     string? ContentText,
-    [property: Description("First 2,850 characters of the plain-text feed content.")]
+    [property: Description("First 2,800 characters of the plain-text feed content.")]
     string? ContentTextTruncated,
     [property: Description("Number of characters in the plain-text feed content.")]
     int ContentCharacterCount,

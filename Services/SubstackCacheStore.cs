@@ -98,10 +98,20 @@ public sealed class SubstackCacheStore
                 throw new InvalidOperationException($"GitHub returned cache content with unsupported encoding '{content.Encoding}'.");
             }
 
-            _cache = JsonSerializer.Deserialize<SubstackCacheDocument>(
-                Encoding.UTF8.GetString(Convert.FromBase64String(content.Content)),
-                JsonOptions);
+            var cacheJson = Encoding.UTF8.GetString(Convert.FromBase64String(content.Content));
             _contentSha = content.Sha;
+
+            // An empty file is equivalent to there being no cache yet. Keep its SHA so the
+            // next refresh updates the existing GitHub file rather than attempting to create it.
+            if (string.IsNullOrWhiteSpace(cacheJson))
+            {
+                _cache = null;
+                _loaded = true;
+                _logger.LogWarning("The Substack cache file in GitHub is empty; treating it as a missing cache.");
+                return;
+            }
+
+            _cache = JsonSerializer.Deserialize<SubstackCacheDocument>(cacheJson, JsonOptions);
             _loaded = true;
         }
         catch (Exception exception) when (exception is HttpRequestException or JsonException or FormatException)
