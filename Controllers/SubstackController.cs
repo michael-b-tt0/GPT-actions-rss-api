@@ -16,7 +16,7 @@ namespace RSS_API.Controllers;
 [Route("[controller]")]
 public sealed class SubstackController : ControllerBase
 {
-    private const int MaxTodayResponseBytes = 100_000;
+    private const int MaxTodayResponseBytes = 90_000;
     private static readonly JsonSerializerOptions ResponseJsonOptions = new(JsonSerializerDefaults.Web);
 
     private static readonly XName OutlineName = "outline";
